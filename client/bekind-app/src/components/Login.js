@@ -50,8 +50,8 @@ function Login(props) {
     <form onSubmit={handleSubmit(onSubmit)}>
       <MDBContainer className="my-5 gradient-form">
         <MDBRow>
-          <MDBCol col="6" className="mb-2">
-            <div className="d-flex flex-column ms-5">
+          <MDBCol col="2" className="mb-5">
+            <div className="d-flex flex-column col-7 ms-2">
               <div className="text-center">
                 <MDBIcon fas icon="hand-holding-heart " size="7x" />
                 <h3 className="mt-1 mb-2 pb-1">Be Kind</h3>
@@ -95,24 +95,47 @@ function Login(props) {
                 <MDBBtn className="mb-4 w-100 gradient-custom-2" type="submit">
                   Sign in
                 </MDBBtn>
-                <h5 className="small text-muted">
+                <h5 className="small text-muted mb-5 ">
                   Don't have an account? <Link to="/register">Register</Link>
                 </h5>
+                <h5>Follow our latest stories and new ways to donate below:</h5>
+                <div className="d-flex justify-content-center">
+                  {" "}
+                  <MDBBtn
+                    tag="a"
+                    color="none"
+                    className="m-2"
+                    style={{ color: "black" }}
+                  >
+                    <MDBIcon fab icon="facebook-f" size="lg" />
+                  </MDBBtn>
+                  <MDBBtn
+                    tag="a"
+                    color="none"
+                    className="m-2"
+                    style={{ color: "black" }}
+                  >
+                    <MDBIcon fab icon="twitter" size="lg" />
+                  </MDBBtn>
+                  <MDBBtn
+                    tag="a"
+                    color="none"
+                    className="m-2"
+                    style={{ color: "black" }}
+                  >
+                    <MDBIcon fab icon="google" size="lg" />
+                  </MDBBtn>
+                </div>
               </div>
             </div>
           </MDBCol>
 
           <MDBCol col="6" className="mb-5">
             <div className="d-flex flex-column  justify-content-center gradient-custom-2 h-100 mb-4">
-              <div className="text-white px-3 py-4 p-md-5 mx-md-4">
-                <h4 class="mb-4">We are more than just a company</h4>
-                <p class="small mb-0">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi ut aliquip ex ea commodo consequat.
-                </p>
-              </div>
+              <img
+                src="https://images.pexels.com/photos/6646917/pexels-photo-6646917.jpeg?auto=compress&cs=tinysrgb&w=600"
+                alt="sideImage"
+              ></img>
             </div>
           </MDBCol>
         </MDBRow>
