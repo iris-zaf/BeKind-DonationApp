@@ -3,9 +3,14 @@ import { Routes, Route } from "react-router-dom";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import "./App.css";
-
+import Navbar from "./components/Navbar";
 function App() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [loading, setLoading] = useState(false);
+
+  const handleUserState = (state) => {
+    setIsLoggedIn(state);
+  };
   useEffect(() => {
     setLoading(true);
     setTimeout(() => {
@@ -33,10 +38,14 @@ function App() {
           </div>
         </>
       ) : (
-        <Routes>
-          <Route path="/" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-        </Routes>
+        <>
+          <Navbar userState={isLoggedIn} />
+          <Routes>
+            <Route path="/" element={<Login onLogin={handleUserState} />} />
+            <Route path="/register" element={<Register />} />
+            {/* <Route path='/logout' element={<Logout onLogout = {handleUserState}/>} /> */}
+          </Routes>
+        </>
       )}
     </div>
   );

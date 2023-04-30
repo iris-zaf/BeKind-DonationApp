@@ -48,13 +48,18 @@ function Login(props) {
   };
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <MDBContainer className="my-5 gradient-form">
-        <MDBRow>
-          <MDBCol col="2" className="mb-5">
-            <div className="d-flex flex-column col-7 ms-2">
+      <MDBContainer className="my-5 gradient-form d-flex">
+        <MDBRow className="mx-5 justify-content-center">
+          <MDBCol>
+            <div className="d-flex flex-column col-8 ms-4">
               <div className="text-center">
-                <MDBIcon fas icon="hand-holding-heart " size="7x" />
-                <h3 className="mt-1 mb-2 pb-1">Be Kind</h3>
+                <MDBIcon
+                  fas
+                  icon="hand-holding-heart "
+                  className="mb-5 "
+                  size="7x"
+                />
+
                 <figcaption className="blockquote-footer mb-5">
                   “No one has ever become poor from giving.” —{" "}
                   <cite title="Source Title">Anne Frank</cite>
@@ -92,7 +97,11 @@ function Login(props) {
                 <p className="errorMsg">{errors.password.message}</p>
               )}
               <div className="text-center pt-1 mb-5 pb-1">
-                <MDBBtn className="mb-4 w-100 gradient-custom-2" type="submit">
+                <MDBBtn
+                  className="mb-4 w-100 "
+                  style={{ backgroundColor: "#ff5722" }}
+                  type="submit"
+                >
                   Sign in
                 </MDBBtn>
                 <h5 className="small text-muted mb-5 ">
@@ -133,7 +142,7 @@ function Login(props) {
           <MDBCol col="6" className="mb-5">
             <div className="d-flex flex-column  justify-content-center gradient-custom-2 h-100 mb-4">
               <img
-                src="https://images.pexels.com/photos/6646917/pexels-photo-6646917.jpeg?auto=compress&cs=tinysrgb&w=600"
+                src="https://images.pexels.com/photos/6646917/pexels-photo-6646917.jpeg?auto=compress&cs=tinysrgb&w=300"
                 alt="sideImage"
               ></img>
             </div>

@@ -112,17 +112,19 @@ function Register() {
                 name="flexCheck"
                 id="flexCheckDefault"
                 label="I agree all statements in Terms of service"
+                required
               />
             </div>
             <MDBBtn
               className="mb-4 w-100 gradient-custom-4"
               size="lg"
               type="submit"
+              style={{ backgroundColor: "#ff5722" }}
             >
               Register
             </MDBBtn>
             <h5 className="small text-muted">
-              You already have an account? <Link to="/login"> Login</Link>{" "}
+              You already have an account? <Link to="/"> Login</Link>{" "}
             </h5>
           </MDBCardBody>
         </MDBCard>
