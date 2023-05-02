@@ -4,6 +4,8 @@ import Login from "./components/Login";
 import Register from "./components/Register";
 import "./App.css";
 import Navbar from "./components/Navbar";
+import Button from "./Button";
+import Success from "./components/stripeResults/Success";
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -43,6 +45,8 @@ function App() {
           <Routes>
             <Route path="/" element={<Login onLogin={handleUserState} />} />
             <Route path="/register" element={<Register />} />
+            <Route path="/create-checkout-session" element={<Button />} />
+            <Route path="/success.html" element={<Success />} />
             {/* <Route path='/logout' element={<Logout onLogout = {handleUserState}/>} /> */}
           </Routes>
         </>

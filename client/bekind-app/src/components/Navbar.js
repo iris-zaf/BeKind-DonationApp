@@ -16,9 +16,9 @@ const Navbar = ({ userState }) => {
   return (
     <>
       {userState ? (
-        <MDBNavbar expand="lg" dark bgColor="dark">
+        <MDBNavbar expand="lg" bgColor="bg-warning bg-gradient">
           <MDBContainer fluid>
-            <MDBNavbarBrand to="/register" className="m-2 fs-1">
+            <MDBNavbarBrand to="/register" className="m-2 fs-1 text-dark">
               BeKind
             </MDBNavbarBrand>
             <MDBNavbarToggler
@@ -34,22 +34,18 @@ const Navbar = ({ userState }) => {
             <MDBCollapse show={showNavColorSecond} navbar id="navbarColor02">
               <MDBNavbarNav className="me-auto mb-2 mb-lg-0">
                 <MDBNavbarItem className="m-4">
-                  <Link to="/homePage" className="text-light">
-                    Your Photos
+                  <Link to="/homePage" className="text-dark">
+                    Homepage
                   </Link>
                 </MDBNavbarItem>
                 <MDBNavbarItem className="m-4">
-                  <Link to="/postPhotos" className="text-light">
-                    Post a Photo
+                  <Link to="/postPhotos" className="text-dark">
+                    Donation History
                   </Link>
                 </MDBNavbarItem>
+
                 <MDBNavbarItem className="m-4">
-                  <Link to="/favourites" className="text-light">
-                    Your favourite Photos
-                  </Link>
-                </MDBNavbarItem>
-                <MDBNavbarItem className="m-4">
-                  <Link to="/logout" className="text-light">
+                  <Link to="/logout" className="text-dark">
                     Log out
                   </Link>
                 </MDBNavbarItem>
@@ -58,9 +54,9 @@ const Navbar = ({ userState }) => {
           </MDBContainer>
         </MDBNavbar>
       ) : (
-        <MDBNavbar expand="lg" dark bgColor="dark">
+        <MDBNavbar expand="lg" bgColor="bg-warning bg-gradient">
           <MDBContainer fluid>
-            <MDBNavbarBrand to="/" className="m-2 fs-1">
+            <MDBNavbarBrand to="/" className="m-2 fs-1 text-dark">
               BeKind
             </MDBNavbarBrand>
             <MDBNavbarToggler
@@ -76,12 +72,12 @@ const Navbar = ({ userState }) => {
             <MDBCollapse show={showNavColorSecond} navbar id="navbarColor02">
               <MDBNavbarNav className="me-auto mb-2 mb-lg-0">
                 <MDBNavbarItem className="m-4">
-                  <Link to="/register" className="text-light">
+                  <Link to="/register" className="text-dark">
                     Register
                   </Link>
                 </MDBNavbarItem>
                 <MDBNavbarItem className="m-4">
-                  <Link to="/" className="text-light">
+                  <Link to="/" className="text-dark">
                     Login
                   </Link>
                 </MDBNavbarItem>

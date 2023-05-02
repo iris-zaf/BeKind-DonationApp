@@ -48,16 +48,16 @@ function Login(props) {
   };
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <MDBContainer className="my-5 gradient-form d-flex">
-        <MDBRow className="mx-5 justify-content-center">
-          <MDBCol>
+      <MDBContainer className="my-2 gradient-form ">
+        <MDBRow className="mx-2 d-flex justify-content-center align-items-center">
+          <MDBCol col="9">
             <div className="d-flex flex-column col-8 ms-4">
               <div className="text-center">
                 <MDBIcon
                   fas
                   icon="hand-holding-heart "
-                  className="mb-5 "
-                  size="7x"
+                  className="mb-4 mt-4 "
+                  size="4x"
                 />
 
                 <figcaption className="blockquote-footer mb-5">
@@ -139,10 +139,10 @@ function Login(props) {
             </div>
           </MDBCol>
 
-          <MDBCol col="6" className="mb-5">
+          <MDBCol col="2" className="mb-5">
             <div className="d-flex flex-column  justify-content-center gradient-custom-2 h-100 mb-4">
               <img
-                src="https://images.pexels.com/photos/6646917/pexels-photo-6646917.jpeg?auto=compress&cs=tinysrgb&w=300"
+                src="https://images.pexels.com/photos/6646917/pexels-photo-6646917.jpeg?auto=compress&cs=tinysrgb&w=600"
                 alt="sideImage"
               ></img>
             </div>
