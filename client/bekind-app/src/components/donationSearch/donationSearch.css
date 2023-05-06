@@ -1,0 +1,36 @@
+.button-1 {
+  background: none;
+  border: 2px solid;
+  border-bottom-width: 4px;
+  font: inherit;
+  letter-spacing: inherit;
+
+  text-transform: inherit;
+  width: 50%;
+  transition: color 1s;
+}
+
+.button-1 {
+  color: #f59200;
+}
+.button-1:hover {
+  -webkit-animation: halftone 1s forwards;
+  animation: halftone 1s forwards;
+  background: radial-gradient(circle, #fdaa2f 0.2em, transparent 0.25em) 0 0/1.25em
+      1.25em,
+    radial-gradient(circle, #fdaa2f 0.2em, transparent 0.25em) 6.25em 6.25em/1.25em
+      1.25em;
+  color: #6d4407;
+}
+
+@keyframes halftone {
+  100% {
+    background-size: 2.375em 2.375em, 0.1em 0.1em;
+  }
+}
+
+@keyframes halftone {
+  100% {
+    background-size: 2.375em 2.375em, 0.1em 0.1em;
+  }
+}

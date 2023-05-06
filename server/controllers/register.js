@@ -1,6 +1,8 @@
 // const bcrypt = require("bcrypt");
+const bcrypt = require("bcrypt");
 require("dotenv").config();
 const User = require("../Models/userModel");
+const SALT_ROUNDS = +process.env.SALT_ROUNDS;
 // Register-sign up
 /*
 //if the user is sending all the required information or not
@@ -14,26 +16,30 @@ response with a message registered successfully
 */
 const registerUser = (req, res) => {
   try {
-    const user = new User({
-      name: req.body.name,
-      email: req.body.email,
-      password: req.body.password,
-    });
-    user
-      .save()
-      .then((result) => {
-        res.status(201).send({
-          message: "User Registered successfully",
-          result,
-        });
-      })
-      .catch((error) => {
-        res.status(500).send({
-          message: "Error creating user",
-          error,
-        });
+    bcrypt.hash(req.body.password, SALT_ROUNDS).then((hashedPassword) => {
+      const user = new User({
+        name: req.body.name,
+        email: req.body.email,
+        password: hashedPassword,
       });
+      user
+        .save()
+        .then((result) => {
+          res.status(201).send({
+            message: "User Registered successfully",
+            result,
+          });
+        })
+        .catch((error) => {
+          console.log("error", error);
+          res.status(500).send({
+            message: "Error creating user",
+            error,
+          });
+        });
+    });
   } catch (error) {
+    console.log("error", error);
     res.status(500).send({
       message: "Password not created successfully",
       error,

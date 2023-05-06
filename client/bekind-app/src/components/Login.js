@@ -10,7 +10,7 @@ import {
   MDBInput,
   MDBIcon,
 } from "mdb-react-ui-kit";
-
+import "../components/donationSearch/donationSearch.css";
 function Login(props) {
   const navigate = useNavigate();
   const {
@@ -97,13 +97,9 @@ function Login(props) {
                 <p className="errorMsg">{errors.password.message}</p>
               )}
               <div className="text-center pt-1 mb-5 pb-1">
-                <MDBBtn
-                  className="mb-4 w-100 "
-                  style={{ backgroundColor: "#ff5722" }}
-                  type="submit"
-                >
+                <button className="button-1 mb-4 w-100" type="submit">
                   Sign in
-                </MDBBtn>
+                </button>
                 <h5 className="small text-muted mb-5 ">
                   Don't have an account? <Link to="/register">Register</Link>
                 </h5>

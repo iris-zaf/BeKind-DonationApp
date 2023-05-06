@@ -8,6 +8,7 @@ const login = require("../controllers/login");
 //underneath are the methods for register and login
 router.post("/register", register);
 router.post("/login", login);
+
 router.get("/success");
 router.get("/cancel");
 //variables for stripe-server side post request to request the payment

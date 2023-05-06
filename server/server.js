@@ -9,9 +9,7 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 app.use("/", routes);
-// app.post("/create-checkout-session", (req, res) => {
-//   res.json({ url: "Hi" });
-// });
+
 app.listen(Port, () => {
   console.log(`Server is listening on port ${Port}`);
 });

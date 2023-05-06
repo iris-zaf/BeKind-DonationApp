@@ -10,6 +10,7 @@ import {
   MDBInput,
   MDBCheckbox,
 } from "mdb-react-ui-kit";
+import "../components/donationSearch/donationSearch.css";
 function Register() {
   const navigate = useNavigate();
   const {
@@ -115,14 +116,13 @@ function Register() {
                 required
               />
             </div>
-            <MDBBtn
-              className="mb-4 w-100 gradient-custom-4"
+            <button
+              className="button-1 mb-4 w-100 gradient-custom-4"
               size="lg"
               type="submit"
-              style={{ backgroundColor: "#ff5722" }}
             >
               Register
-            </MDBBtn>
+            </button>
             <h5 className="small text-muted">
               You already have an account? <Link to="/"> Login</Link>{" "}
             </h5>

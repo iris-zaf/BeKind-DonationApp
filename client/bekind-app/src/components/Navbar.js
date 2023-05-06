@@ -39,8 +39,8 @@ const Navbar = ({ userState }) => {
                   </Link>
                 </MDBNavbarItem>
                 <MDBNavbarItem className="m-4">
-                  <Link to="/postPhotos" className="text-dark">
-                    Donation History
+                  <Link to="/search" className="text-dark">
+                    Search for a donation
                   </Link>
                 </MDBNavbarItem>
 
