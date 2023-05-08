@@ -43,7 +43,11 @@ const Navbar = ({ userState }) => {
                     Search for a donation
                   </Link>
                 </MDBNavbarItem>
-
+                <MDBNavbarItem className="m-4">
+                  <Link to="/history" className="text-dark">
+                    My Donations
+                  </Link>
+                </MDBNavbarItem>
                 <MDBNavbarItem className="m-4">
                   <Link to="/logout" className="text-dark">
                     Log out

@@ -17,8 +17,8 @@ router.get("/cancel");
 
 //save donation button
 router.post("/donation", verifyToken, async (req, res) => {
-  console.log("req.user", req.user);
-  console.log("req.body", req.body);
+  // console.log("req.user", req.user);
+  // console.log("req.body", req.body);
   try {
     let { coverImageUrl, name, location, description, profileUrl } = req.body;
     let user = req.user;
@@ -32,6 +32,20 @@ router.post("/donation", verifyToken, async (req, res) => {
       profileUrl,
     });
     res.status(200).json(donation);
+  } catch (error) {
+    console.log(error);
+    res.status(500).send({ msg: "Server error" });
+  }
+});
+
+router.get("/history", verifyToken, async (req, res) => {
+  try {
+    let user = req.user;
+    // console.log(user);
+    let donations = await Donation.find({ userID: user.id }).exec();
+    console.log(donations);
+
+    res.status(200).json(donations);
   } catch (error) {
     console.log(error);
     res.status(500).send({ msg: "Server error" });

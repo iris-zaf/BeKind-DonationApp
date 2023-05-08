@@ -89,7 +89,6 @@ function DonationSearch() {
       <MDBContainer fluid className="my-5">
         <MDBRow className="w-100 row-cols-1 row-cols-md-3 g-5">
           {charities.map((charity, i) => {
-            console.log(charity);
             return (
               <MDBCard key={i}>
                 <MDBCardImage

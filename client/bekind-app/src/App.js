@@ -6,9 +6,10 @@ import "./App.css";
 import Navbar from "./components/Navbar";
 import Button from "./Button";
 import Success from "./components/stripeResults/Success";
-import Logout from "./components/logout";
+import Logout from "./components/Logout";
 import DonationSearch from "./components/donationSearch/donationSearch";
 import Home from "./components/homepage/homepage";
+import History from "./components/History";
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -52,6 +53,7 @@ function App() {
             <Route path="/success.html" element={<Success />} />
             <Route path="/search" element={<DonationSearch />} />
             <Route path="/homepage" element={<Home />} />
+            <Route path="/history" element={<History />} />
             {/* <Route path='/logout' element={<Logout onLogout = {handleUserState}/>} /> */}
             <Route
               path="/logout"
