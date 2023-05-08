@@ -1,16 +1,43 @@
 const express = require("express");
 
 const router = express.Router();
-
+const User = require("../Models/userModel");
+const verifyToken = require("../authorize");
 //here I will add my controllers
 const register = require("../controllers/register");
 const login = require("../controllers/login");
+const { Donation } = require("../Models/donationModel");
+
 //underneath are the methods for register and login
 router.post("/register", register);
 router.post("/login", login);
 
 router.get("/success");
 router.get("/cancel");
+
+//save donation button
+router.post("/donation", verifyToken, async (req, res) => {
+  console.log("req.user", req.user);
+  console.log("req.body", req.body);
+  try {
+    let { coverImageUrl, name, location, description, profileUrl } = req.body;
+    let user = req.user;
+    console.log("user", user);
+    let donation = await Donation.create({
+      userID: user.id,
+      coverImageUrl,
+      name,
+      location,
+      description,
+      profileUrl,
+    });
+    res.status(200).json(donation);
+  } catch (error) {
+    console.log(error);
+    res.status(500).send({ msg: "Server error" });
+  }
+});
+
 //variables for stripe-server side post request to request the payment
 const stripe = require("stripe")(process.env.STRIPE_PRIVATE_KEY);
 

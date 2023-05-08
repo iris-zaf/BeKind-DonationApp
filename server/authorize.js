@@ -8,7 +8,8 @@ const verifyToken = async (req, res, next) => {
     if (!req.headers.authorization) {
       return res.status(401).send({ message: "Can't find token..." });
     }
-    const token = await req.headers.authorization.split(" ")[1];
+    const token = req.headers.authorization.split(" ")[1];
+    console.log("token", token);
     //check if no authorized(error 401)
     if (!token) {
       res.status(401).send({ message: "Token not valid..." });

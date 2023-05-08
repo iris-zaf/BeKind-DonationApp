@@ -112,7 +112,7 @@ function Register() {
               <MDBCheckbox
                 name="flexCheck"
                 id="flexCheckDefault"
-                label="I agree all statements in Terms of service"
+                label="I agree with all the statements in Terms of service"
                 required
               />
             </div>
