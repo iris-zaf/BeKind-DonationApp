@@ -40,28 +40,35 @@ function History() {
       {" "}
       <h5>My Donations </h5>
       <MDBRow className="w-100 row-cols-1 row-cols-md-3 g-5">
-        {history.map((charity) => {
+        {history.map((donation) => {
           return (
-            <MDBCard key={charity.id}>
+            <MDBCard key={donation.id}>
               <MDBCardImage
                 position="top"
                 alt="..."
-                src={charity.coverImageUrl}
+                src={donation.coverImageUrl}
               />
               <MDBCardBody>
-                <MDBCardText>{charity.name}</MDBCardText>
                 <MDBCardText style={{ fontSize: "15px" }}>
-                  {charity.location}
+                  {donation.amount}&#8364;
+                </MDBCardText>
+                <MDBCardText>{donation.name}</MDBCardText>
+                <MDBCardText style={{ fontSize: "15px" }}>
+                  {donation.location}
                 </MDBCardText>
                 <MDBCardTitle style={{ fontSize: "12px" }}>
-                  {charity.description}
+                  {donation.description}
                 </MDBCardTitle>
                 <div style={{ fontSize: "12px" }}>
                   <p style={{ marginBottom: "0px", marginTop: "20px" }}>
                     Learn more:
                   </p>
-                  <a href={charity.profileUrl} target="_blank" rel="noreferrer">
-                    {charity.profileUrl}
+                  <a
+                    href={donation.profileUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    {donation.profileUrl}
                   </a>
                 </div>
               </MDBCardBody>

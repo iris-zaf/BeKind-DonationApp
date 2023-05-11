@@ -10,7 +10,6 @@ import {
   MDBCardTitle,
   MDBCard,
   MDBCardText,
-  MDBBtn,
   MDBIcon,
 } from "mdb-react-ui-kit";
 import "../donationSearch/donationSearch.css";
@@ -35,12 +34,10 @@ function DonationSearch() {
       });
   }
   async function saveDonation(charity) {
-    console.log("charity", charity);
-
     try {
       let response = await axios.post(
         "http://localhost:8080/donation",
-        charity,
+        { charity, amount },
 
         {
           headers: {
@@ -118,7 +115,7 @@ function DonationSearch() {
                     type="text"
                   />
                   <button
-                    onClick={() => saveDonation(charity)}
+                    onClick={() => saveDonation(charity, amount)}
                     className=" align-items-center my-5 mx-5"
                     size="lg"
                   >

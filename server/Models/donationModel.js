@@ -9,7 +9,6 @@ const donationSchema = new mongoose.Schema(
     description: { type: String },
     profileUrl: { type: String },
     amount: { type: Number },
-    // amountID: { type: mongoose.Schema.Types.ObjectId, ref: "Amount" },
   },
   { timestamps: true }
 );

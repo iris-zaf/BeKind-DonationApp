@@ -23,20 +23,19 @@ router.post("/donation", verifyToken, async (req, res) => {
   // console.log("req.body.charity.name", req.body.charity.name);
 
   try {
-    let { coverImageUrl, name, location, description, profileUrl, amount } =
-      req.body;
+    let { charity, amount } = req.body;
     // let amount = req.body.amount;
     // console.log("req.body.amount", req.body.amount);
     let user = req.user;
     console.log("user", user);
     let donation = await Donation.create({
       userID: user.id,
-      coverImageUrl,
-      name,
-      location,
-      description,
-      profileUrl,
-      amount,
+      coverImageUrl: charity.coverImageUrl,
+      name: charity.name,
+      location: charity.location,
+      description: charity.description,
+      profileUrl: charity.profileUrl,
+      amount: req.body.amount,
     });
     res.status(200).json(donation);
   } catch (error) {

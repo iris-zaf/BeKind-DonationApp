@@ -1,25 +1,26 @@
 import React from "react";
-import {
-  MDBCard,
-  MDBCardBody,
-  MDBCardText,
-  MDBCardImage,
-} from "mdb-react-ui-kit";
 
+import myGif from "./save-money.gif";
 export default function Success() {
   return (
-    <MDBCard>
-      <MDBCardImage
-        src="https://mdbootstrap.com/img/new/standard/nature/182.webp"
-        alt="..."
+    <div
+      style={{
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        height: "100vh",
+      }}
+    >
+      <img
+        src={myGif}
+        alt="saveMoney"
         position="top"
+        style={{
+          width: "10em",
+        }}
       />
-      <MDBCardBody>
-        <MDBCardText>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </MDBCardText>
-      </MDBCardBody>
-    </MDBCard>
+
+      <p>Thank you for your donation 💫</p>
+    </div>
   );
 }

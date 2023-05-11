@@ -6,6 +6,7 @@ import "./App.css";
 import Navbar from "./components/navbar/Navbar";
 import Button from "./Button";
 import Success from "./components/stripeResults/Success";
+import Error from "./components/stripeResults/Error";
 import Logout from "./components/Logout";
 import DonationSearch from "./components/donationSearch/donationSearch";
 import Home from "./components/homepage/homepage";
@@ -50,7 +51,9 @@ function App() {
             <Route path="/" element={<Login onLogin={handleUserState} />} />
             <Route path="/register" element={<Register />} />
             <Route path="/create-checkout-session" element={<Button />} />
-            <Route path="/success.html" element={<Success />} />
+            <Route path="/success" element={<Success />} />
+            <Route path="/error" element={<Error />} />
+
             <Route path="/search" element={<DonationSearch />} />
             <Route path="/homepage" element={<Home />} />
             <Route path="/history" element={<History />} />
