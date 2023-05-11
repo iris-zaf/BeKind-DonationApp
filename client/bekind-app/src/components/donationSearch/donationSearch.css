@@ -1,4 +1,11 @@
-.button-1 {
+button {
+  background-color: rgb(20, 33, 61);
+  color: white;
+  display: inline-flex;
+  border-radius: 8px;
+}
+
+.button1 {
   background: none;
   border: 2px solid;
   border-bottom-width: 4px;
@@ -6,14 +13,14 @@
   letter-spacing: inherit;
 
   text-transform: inherit;
-  width: 50%;
+  width: 30%;
   transition: color 1s;
 }
 
-.button-1 {
+.button1 {
   color: #f59200;
 }
-.button-1:hover {
+.button1:hover {
   -webkit-animation: halftone 1s forwards;
   animation: halftone 1s forwards;
   background: radial-gradient(circle, #fdaa2f 0.2em, transparent 0.25em) 0 0/1.25em

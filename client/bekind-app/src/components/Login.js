@@ -57,7 +57,7 @@ function Login(props) {
                   fas
                   icon="hand-holding-heart "
                   className="mb-4 mt-4 "
-                  size="4x"
+                  size="2x"
                 />
 
                 <figcaption className="blockquote-footer mb-5">
@@ -103,7 +103,7 @@ function Login(props) {
                 <h5 className="small text-muted mb-5 ">
                   Don't have an account? <Link to="/register">Register</Link>
                 </h5>
-                <h5>Follow our latest stories and new ways to donate below:</h5>
+                <p>Follow our latest stories and new ways to donate below:</p>
                 <div className="d-flex justify-content-center">
                   {" "}
                   <MDBBtn

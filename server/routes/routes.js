@@ -1,7 +1,7 @@
 const express = require("express");
 
 const router = express.Router();
-const User = require("../Models/userModel");
+
 const verifyToken = require("../authorize");
 //here I will add my controllers
 const register = require("../controllers/register");
@@ -19,8 +19,14 @@ router.get("/cancel");
 router.post("/donation", verifyToken, async (req, res) => {
   // console.log("req.user", req.user);
   // console.log("req.body", req.body);
+  // console.log("req.body.name", req.body.name);
+  // console.log("req.body.charity.name", req.body.charity.name);
+
   try {
-    let { coverImageUrl, name, location, description, profileUrl } = req.body;
+    let { coverImageUrl, name, location, description, profileUrl, amount } =
+      req.body;
+    // let amount = req.body.amount;
+    // console.log("req.body.amount", req.body.amount);
     let user = req.user;
     console.log("user", user);
     let donation = await Donation.create({
@@ -30,6 +36,7 @@ router.post("/donation", verifyToken, async (req, res) => {
       location,
       description,
       profileUrl,
+      amount,
     });
     res.status(200).json(donation);
   } catch (error) {

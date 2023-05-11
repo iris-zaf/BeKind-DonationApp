@@ -11,6 +11,7 @@ import {
   MDBCard,
   MDBCardText,
   MDBBtn,
+  MDBIcon,
 } from "mdb-react-ui-kit";
 import "../donationSearch/donationSearch.css";
 import { useState } from "react";
@@ -18,6 +19,7 @@ import { useState } from "react";
 function DonationSearch() {
   const [searchInput, setSearchInput] = useState("");
   const [charities, setCharities] = useState([]);
+  const [amount, setAmount] = useState(0);
   let myToken = localStorage.getItem("token");
 
   async function search() {
@@ -33,18 +35,20 @@ function DonationSearch() {
       });
   }
   async function saveDonation(charity) {
-    console.log(charity);
+    console.log("charity", charity);
+
     try {
       let response = await axios.post(
         "http://localhost:8080/donation",
         charity,
+
         {
           headers: {
             Authorization: `Bearer ${myToken}`,
           },
         }
       );
-      console.log("Donation saved successfully");
+
       alert("Donation saved successfully");
       return true;
     } catch (error) {
@@ -71,26 +75,17 @@ function DonationSearch() {
             />
           </MDBCol>
           <MDBCol>
-            <button onClick={search} className="button-1" md="4" color="dark">
-              Let's go
+            <button onClick={search} className="button1" md="4" color="dark">
+              Search
             </button>
-          </MDBCol>
-          <MDBCol>
-            {/* <MDBBtn
-              onClick={saveDonation}
-              className=" align-items-center my-5 mx-5"
-              size="lg"
-            >
-              Donate🎁
-            </MDBBtn> */}
           </MDBCol>
         </MDBRow>
       </MDBContainer>
       <MDBContainer fluid className="my-5">
         <MDBRow className="w-100 row-cols-1 row-cols-md-3 g-5">
-          {charities.map((charity, i) => {
+          {charities.map((charity) => {
             return (
-              <MDBCard key={i}>
+              <MDBCard key={charity.id}>
                 <MDBCardImage
                   position="top"
                   alt="..."
@@ -116,13 +111,21 @@ function DonationSearch() {
                       {charity.profileUrl}
                     </a>
                   </div>
-                  <MDBBtn
+                  <MDBInput
+                    label="Enter amount..."
+                    onChange={(e) => setAmount(parseFloat(e.target.value))}
+                    id="form1"
+                    type="text"
+                  />
+                  <button
                     onClick={() => saveDonation(charity)}
                     className=" align-items-center my-5 mx-5"
                     size="lg"
                   >
-                    Donate🎁
-                  </MDBBtn>
+                    Donate
+                    <br />
+                    <MDBIcon fas icon="gift m-2" />
+                  </button>
                 </MDBCardBody>
               </MDBCard>
             );
