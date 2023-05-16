@@ -124,7 +124,7 @@ function Register() {
               Register
             </button>
             <h5 className="small text-muted">
-              You already have an account? <Link to="/"> Login</Link>{" "}
+              You already have an account? <Link to="/login"> Login</Link>{" "}
             </h5>
           </MDBCardBody>
         </MDBCard>

@@ -27,24 +27,24 @@
   border-radius: var(--radius);
   font-size: 0.7em;
 }
-button {
-  border-radius: 3px;
+#submit {
+  border-radius: 5px;
   color: white;
   border: 0;
-  padding: 12px 16px;
-  margin-top: 16px;
+  padding: 4px;
+  margin-top: 10px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.2s ease;
 }
-button:hover {
+#submit:hover {
   filter: contrast(75%);
 }
-button:active {
+#submit:active {
   transform: translateY(0px) scale(0.98);
   filter: brightness(0.9);
 }
-button:disabled {
+#submit:disabled {
   opacity: 1;
   cursor: none;
 }

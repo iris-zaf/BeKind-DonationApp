@@ -48,10 +48,10 @@ function Login(props) {
   };
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <MDBContainer className="my-2 gradient-form ">
-        <MDBRow className="mx-2 d-flex justify-content-center align-items-center">
-          <MDBCol col="9">
-            <div className="d-flex flex-column col-8 ms-4">
+      <MDBContainer className="my-2 gradient-form " fluid>
+        <MDBRow>
+          <MDBCol sm="6">
+            <div className=" flex-column col-8 ms-4">
               <div className="text-center">
                 <MDBIcon
                   fas
@@ -69,7 +69,7 @@ function Login(props) {
               <p>Login to your account</p>
 
               <MDBInput
-                wrapperClass="mb-4"
+                wrapperClass="mb-3"
                 label="Email address"
                 id="form1"
                 type="email"
@@ -77,8 +77,8 @@ function Login(props) {
                   required: "Email is required.",
                 })}
               />
-              {errors.password && (
-                <p className="errorMsg">{errors.password.message}</p>
+              {errors.email && (
+                <p className="errorMsg">{errors.email.message}</p>
               )}
               <MDBInput
                 wrapperClass="mb-4"
@@ -97,13 +97,13 @@ function Login(props) {
                 <p className="errorMsg">{errors.password.message}</p>
               )}
               <div className="text-center pt-1 mb-5 pb-1">
-                <button className="button-1 mb-4 w-100" type="submit">
+                <button className="mb-3 " type="submit">
                   Sign in
                 </button>
                 <h5 className="small text-muted mb-5 ">
                   Don't have an account? <Link to="/register">Register</Link>
                 </h5>
-                <p>Follow our latest stories and new ways to donate below:</p>
+                <p>Follow our latest stories and new ways to donate:</p>
                 <div className="d-flex justify-content-center">
                   {" "}
                   <MDBBtn
@@ -135,13 +135,11 @@ function Login(props) {
             </div>
           </MDBCol>
 
-          <MDBCol col="2" className="mb-5">
-            <div className="d-flex flex-column  justify-content-center gradient-custom-2 h-100 mb-4">
-              <img
-                src="https://images.pexels.com/photos/6646917/pexels-photo-6646917.jpeg?auto=compress&cs=tinysrgb&w=600"
-                alt="sideImage"
-              ></img>
-            </div>
+          <MDBCol sm="6" className="d-none d-sm-block px-0">
+            <img
+              src="https://images.pexels.com/photos/6646917/pexels-photo-6646917.jpeg?auto=compress&cs=tinysrgb&w=600"
+              alt="sideImage"
+            ></img>
           </MDBCol>
         </MDBRow>
       </MDBContainer>

@@ -29,7 +29,6 @@ function Payment() {
   // console.log("stripePromise", stripePromise);
   return (
     <>
-      Review your donation choice
       {clientSecret && stripePromise && (
         <Elements stripe={loadStripe(stripePromise)} options={{ clientSecret }}>
           <CheckoutForm />

@@ -37,14 +37,20 @@ export default function CheckoutForm() {
   };
 
   return (
-    <form id="payment-form" onSubmit={handleSubmit}>
-      <PaymentElement id="payment-element" />
-      <button disabled={isProcessing || !stripe || !elements} id="submit">
-        <span id="button-text">
-          {isProcessing ? "Processing ..." : "Pay now"}
-        </span>
-      </button>
-      {message && <div id="payment-message">{message}</div>}
-    </form>
+    <>
+      <form id="payment-form" onSubmit={handleSubmit}>
+        <h5 style={{ marginBottom: "5em", fontWeight: "bold" }}>
+          Add your payment details
+        </h5>
+        <PaymentElement id="payment-element" />
+
+        <button disabled={isProcessing || !stripe || !elements} id="submit">
+          <span id="button-text">
+            {isProcessing ? "Processing ..." : "Pay now"}
+          </span>
+        </button>
+        {message && <div id="payment-message">{message}</div>}
+      </form>
+    </>
   );
 }

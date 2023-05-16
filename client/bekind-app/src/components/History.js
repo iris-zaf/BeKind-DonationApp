@@ -36,56 +36,43 @@ function History() {
   }, []);
 
   return (
-    <MDBContainer fluid className="my-5">
-      {" "}
-      <h5>My Donations </h5>
-      <MDBRow className="w-100 row-cols-1 row-cols-md-4 g-5">
-        {history.map((donation) => {
-          return (
-            <MDBCard
-              key={donation.id}
-              style={{
-                border: "2px solid blue",
-                marginLeft: "2em",
-              }}
-            >
-              <MDBCardImage
-                position="top"
-                alt="..."
-                src={donation.coverImageUrl}
-              />
-              <MDBCardBody>
-                <p style={{ fontSize: "12px" }}>Donated amount:</p>
-                <MDBCardText style={{ fontSize: "15px" }}>
-                  {donation.amount}&#8364;
-                </MDBCardText>
-                <MDBCardText style={{ fontSize: "18px" }}>
-                  {donation.name}
-                </MDBCardText>
-                <MDBCardText style={{ fontSize: "12px" }}>
-                  {donation.location}
-                </MDBCardText>
-                <MDBCardTitle style={{ fontSize: "12px" }}>
-                  {donation.description}
-                </MDBCardTitle>
-                <div style={{ fontSize: "12px" }}>
-                  <p style={{ marginBottom: "0px", marginTop: "20px" }}>
-                    Learn more:
-                  </p>
-                  <a
-                    href={donation.profileUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    {donation.profileUrl}
-                  </a>
-                </div>
-              </MDBCardBody>
-            </MDBCard>
-          );
-        })}
-      </MDBRow>
-    </MDBContainer>
+    <>
+      <h4 style={{ margin: "2em" }}>My Donations </h4>
+      <MDBContainer fluid className="my-5 d-flex">
+        {" "}
+        <MDBRow className="w-100 row-cols-1 row-cols-md-5">
+          {history.map((donation) => {
+            return (
+              <MDBCard
+                key={donation.id}
+                style={{
+                  border: "3px solid  rgb(253,170,47)",
+                  margin: "2em",
+                }}
+              >
+                <MDBCardImage
+                  position="top"
+                  alt="..."
+                  src={donation.coverImageUrl}
+                />
+                <MDBCardBody>
+                  <p style={{ fontSize: "12px" }}>Donated amount:</p>
+                  <MDBCardText style={{ fontSize: "15px" }}>
+                    {donation.amount}&#8364;
+                  </MDBCardText>
+                  <MDBCardText style={{ fontSize: "18px" }}>
+                    {donation.name}
+                  </MDBCardText>
+                  <MDBCardText style={{ fontSize: "12px" }}>
+                    {donation.location}
+                  </MDBCardText>
+                </MDBCardBody>
+              </MDBCard>
+            );
+          })}
+        </MDBRow>
+      </MDBContainer>
+    </>
   );
 }
 

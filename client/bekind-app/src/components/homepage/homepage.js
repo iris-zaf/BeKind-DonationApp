@@ -112,10 +112,9 @@ function Home() {
         </MDBCol>
       </MDBRow>
       <MDBRow
-        className=" row-cols-lg-2 row-cols-lg-2 gx-2"
+        className="d-flex"
         style={{
-          marginTop: "10em",
-          display: "flex",
+          marginTop: "5em",
         }}
       >
         <MDBCol
@@ -125,10 +124,8 @@ function Home() {
           }}
         >
           <MDBCard
-            style={{
-              backgroundColor: "transparent",
-            }}
-            className="d-flex justify-content-center align-items-center "
+            className="w-70 justify-content-center align-items-center"
+            style={{ backgroundColor: "transparent" }}
           >
             <MDBInput id="form4Example1" wrapperClass="mb-4" label="Name" />
             <MDBInput
@@ -152,17 +149,16 @@ function Home() {
               defaultChecked
             />
 
-            <MDBBtn className="button-1 " type="submit" block>
+            <MDBBtn className="button-1 w-25 " type="submit" block>
               Stay in touch
             </MDBBtn>
           </MDBCard>
         </MDBCol>
-        <MDBCol style={{ justifyContent: "space-between" }} className="col-5">
+        <MDBCol className="col-5">
           <MDBCard
             style={{
               backgroundColor: "transparent",
             }}
-            className="d-flex justify-content-center align-items-center"
           >
             <h5 style={{ color: "white" }}> We are here ❣️</h5>
             <iframe
