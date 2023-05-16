@@ -39,21 +39,30 @@ function History() {
     <MDBContainer fluid className="my-5">
       {" "}
       <h5>My Donations </h5>
-      <MDBRow className="w-100 row-cols-1 row-cols-md-3 g-5">
+      <MDBRow className="w-100 row-cols-1 row-cols-md-4 g-5">
         {history.map((donation) => {
           return (
-            <MDBCard key={donation.id}>
+            <MDBCard
+              key={donation.id}
+              style={{
+                border: "2px solid blue",
+                marginLeft: "2em",
+              }}
+            >
               <MDBCardImage
                 position="top"
                 alt="..."
                 src={donation.coverImageUrl}
               />
               <MDBCardBody>
+                <p style={{ fontSize: "12px" }}>Donated amount:</p>
                 <MDBCardText style={{ fontSize: "15px" }}>
                   {donation.amount}&#8364;
                 </MDBCardText>
-                <MDBCardText>{donation.name}</MDBCardText>
-                <MDBCardText style={{ fontSize: "15px" }}>
+                <MDBCardText style={{ fontSize: "18px" }}>
+                  {donation.name}
+                </MDBCardText>
+                <MDBCardText style={{ fontSize: "12px" }}>
                   {donation.location}
                 </MDBCardText>
                 <MDBCardTitle style={{ fontSize: "12px" }}>

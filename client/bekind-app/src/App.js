@@ -11,6 +11,8 @@ import Logout from "./components/Logout";
 import DonationSearch from "./components/donationSearch/donationSearch";
 import Home from "./components/homepage/homepage";
 import History from "./components/History";
+import Payment from "./components/stripeResults/Payment";
+
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -57,7 +59,9 @@ function App() {
             <Route path="/search" element={<DonationSearch />} />
             <Route path="/homepage" element={<Home />} />
             <Route path="/history" element={<History />} />
-            {/* <Route path='/logout' element={<Logout onLogout = {handleUserState}/>} /> */}
+
+            <Route path="/create-payment-intent" element={<Payment />} />
+
             <Route
               path="/logout"
               element={<Logout onLogout={handleUserState} />}

@@ -36,6 +36,7 @@ router.post("/donation", verifyToken, async (req, res) => {
       description: charity.description,
       profileUrl: charity.profileUrl,
       amount: req.body.amount,
+      status: charity.pending,
     });
     res.status(200).json(donation);
   } catch (error) {
@@ -49,7 +50,7 @@ router.get("/history", verifyToken, async (req, res) => {
     let user = req.user;
     // console.log(user);
     let donations = await Donation.find({ userID: user.id }).exec();
-    console.log(donations);
+    console.log("donations", donations);
 
     res.status(200).json(donations);
   } catch (error) {
@@ -62,36 +63,31 @@ router.get("/history", verifyToken, async (req, res) => {
 const stripe = require("stripe")(process.env.STRIPE_PRIVATE_KEY);
 
 //below it is just a test-i will need to implement the every.org donation API
-const storeItems = new Map([
-  [1, { priceInCents: 1000, name: "Learn React" }],
-  [2, { priceInCents: 2000, name: "Learn CSS" }],
-]);
+// const storeItems = new Map([
+//   [1, { priceInCents: 1000, name: "Learn React" }],
+//   [2, { priceInCents: 2000, name: "Learn CSS" }],
+// ]);
+router.get("/config", (req, res) => {
+  res.send({
+    publishableKey: process.env.STRIPE_PUBLISHABLE_KEY,
+  });
+});
 
-router.post("/create-checkout-session", async (req, res) => {
+router.post("/create-payment-intent", async (req, res) => {
   try {
-    const session = await stripe.checkout.sessions.create({
-      payment_method_types: ["card"],
-      line_items: req.body.items.map((item) => {
-        const storeItem = storeItems.get(item.id);
-        return {
-          price_data: {
-            currency: "eur",
-            product_data: {
-              name: storeItem.name,
-            },
-            unit_amount: storeItem.priceInCents,
-          },
-          quantity: item.quantity,
-        };
-      }),
-      mode: "payment",
-      success_url: `${process.env.SERVER_URL}/success`,
-      cancel_url: `${process.env.SERVER_URL}/cancel`,
+    const paymentIntent = await stripe.paymentIntents.create({
+      amount: 2000,
+      currency: "eur",
+
+      automatic_payment_methods: {
+        enabled: true,
+      },
     });
 
-    res.json({ url: session.url });
+    res.send({ clientSecret: paymentIntent.client_secret });
   } catch (e) {
-    res.status(500).json({ error: e.message });
+    console.log(e);
+    res.status(400).send({ error: { message: e.message } });
   }
 });
 module.exports = router;

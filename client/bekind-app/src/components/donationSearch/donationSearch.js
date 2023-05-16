@@ -1,5 +1,7 @@
 import React from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
+
 import {
   MDBInput,
   MDBCol,
@@ -19,6 +21,7 @@ function DonationSearch() {
   const [searchInput, setSearchInput] = useState("");
   const [charities, setCharities] = useState([]);
   const [amount, setAmount] = useState(0);
+  const navigate = useNavigate();
   let myToken = localStorage.getItem("token");
 
   async function search() {
@@ -45,8 +48,10 @@ function DonationSearch() {
           },
         }
       );
+      console.log("response", response);
+      alert("Donation saved");
+      navigate("/create-payment-intent");
 
-      alert("Donation saved successfully");
       return true;
     } catch (error) {
       console.log(error);
@@ -93,6 +98,7 @@ function DonationSearch() {
                   <MDBCardText style={{ fontSize: "15px" }}>
                     {charity.location}
                   </MDBCardText>
+
                   <MDBCardTitle style={{ fontSize: "12px" }}>
                     {charity.description}
                   </MDBCardTitle>
@@ -119,8 +125,8 @@ function DonationSearch() {
                     className=" align-items-center my-5 mx-5"
                     size="lg"
                   >
-                    Donate
                     <br />
+                    Donate
                     <MDBIcon fas icon="gift m-2" />
                   </button>
                 </MDBCardBody>

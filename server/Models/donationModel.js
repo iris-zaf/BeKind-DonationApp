@@ -9,6 +9,11 @@ const donationSchema = new mongoose.Schema(
     description: { type: String },
     profileUrl: { type: String },
     amount: { type: Number },
+    status: {
+      type: String,
+      enum: ["pending", "completed"],
+      default: "pending",
+    },
   },
   { timestamps: true }
 );
