@@ -17,7 +17,7 @@ import {
 
 function Home() {
   return (
-    <div style={{ backgroundColor: "#14213d" }}>
+    <div style={{ backgroundColor: "#14213d", marginTop: "5em" }}>
       <Carousel cols={2} rows={1} gap={10} loop>
         <Carousel.Item>
           <img

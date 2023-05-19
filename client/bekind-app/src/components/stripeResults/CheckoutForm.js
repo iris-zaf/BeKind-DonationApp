@@ -7,7 +7,7 @@ import {
 
 import "./checkout.css";
 
-export default function CheckoutForm() {
+function CheckoutForm(props) {
   const stripe = useStripe();
   const elements = useElements();
 
@@ -28,6 +28,7 @@ export default function CheckoutForm() {
         return_url: `${window.location.origin}/success`,
       },
     });
+
     if (error.type === "card_error" || error.type === "validation_error") {
       setMessage(error.message);
     } else {
@@ -46,11 +47,18 @@ export default function CheckoutForm() {
 
         <button disabled={isProcessing || !stripe || !elements} id="submit">
           <span id="button-text">
-            {isProcessing ? "Processing ..." : "Pay now"}
+            {isProcessing
+              ? "Processing ..."
+              : ` Pay now ${new Intl.NumberFormat(undefined, {
+                  style: "currency",
+                  currency: "EUR",
+                }).format(props.amount)}`}
           </span>
+          <div> </div>
         </button>
         {message && <div id="payment-message">{message}</div>}
       </form>
     </>
   );
 }
+export default CheckoutForm;

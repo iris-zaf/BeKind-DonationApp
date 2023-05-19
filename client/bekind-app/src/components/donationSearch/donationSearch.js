@@ -17,10 +17,10 @@ import {
 import "../donationSearch/donationSearch.css";
 import { useState } from "react";
 
-function DonationSearch() {
+function DonationSearch({ amount, setAmount }) {
   const [searchInput, setSearchInput] = useState("");
   const [charities, setCharities] = useState([]);
-  const [amount, setAmount] = useState(0);
+
   const navigate = useNavigate();
   let myToken = localStorage.getItem("token");
 
@@ -59,7 +59,7 @@ function DonationSearch() {
     }
   }
   return (
-    <>
+    <div>
       <MDBContainer fluid className="d-flex my-5">
         <MDBRow className="align-items-center justify-content-center">
           <h3 className="fw-bold mb-0">Find a charity to donate today </h3>
@@ -135,7 +135,7 @@ function DonationSearch() {
           })}
         </MDBRow>
       </MDBContainer>
-    </>
+    </div>
   );
 }
 

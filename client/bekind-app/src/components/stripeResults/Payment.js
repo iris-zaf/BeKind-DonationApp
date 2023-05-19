@@ -3,9 +3,11 @@ import { useEffect, useState } from "react";
 import CheckoutForm from "./CheckoutForm";
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
-function Payment() {
+function Payment(props) {
   const [stripePromise, setStripePromise] = useState(null);
   const [clientSecret, setClientSecret] = useState("");
+
+  console.log("props", props);
   useEffect(() => {
     fetch("http://localhost:8080/config").then(async (r) => {
       const { publishableKey } = await r.json();
@@ -15,10 +17,12 @@ function Payment() {
   }, []);
 
   //second useEffect to create the payment intent
+
   useEffect(() => {
     fetch("http://localhost:8080/create-payment-intent", {
       method: "POST",
-      body: JSON.stringify({}),
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ amount: props.amount * 100 }),
     }).then(async (r) => {
       const { clientSecret } = await r.json();
       console.log("clientSecret", clientSecret);
@@ -31,7 +35,7 @@ function Payment() {
     <>
       {clientSecret && stripePromise && (
         <Elements stripe={loadStripe(stripePromise)} options={{ clientSecret }}>
-          <CheckoutForm />
+          <CheckoutForm amount={props.amount} />
         </Elements>
       )}
     </>

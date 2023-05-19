@@ -16,7 +16,7 @@ import Payment from "./components/stripeResults/Payment";
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [loading, setLoading] = useState(false);
-
+  const [amount, setAmount] = useState(0);
   const handleUserState = (state) => {
     setIsLoggedIn(state);
   };
@@ -59,9 +59,15 @@ function App() {
             <Route path="/register" element={<Register />} />
             <Route path="/success" element={<Success />} />
             <Route path="/error" element={<Error />} />
-            <Route path="/search" element={<DonationSearch />} />
+            <Route
+              path="/search"
+              element={<DonationSearch amount={amount} setAmount={setAmount} />}
+            />
             <Route path="/history" element={<History />} />
-            <Route path="/create-payment-intent" element={<Payment />} />
+            <Route
+              path="/create-payment-intent"
+              element={<Payment amount={amount} />}
+            />
             <Route
               path="/logout"
               element={<Logout onLogout={handleUserState} />}

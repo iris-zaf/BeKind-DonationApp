@@ -7,7 +7,6 @@ import {
   MDBRow,
   MDBCardBody,
   MDBCardImage,
-  MDBCardTitle,
   MDBCard,
   MDBCardText,
 } from "mdb-react-ui-kit";
@@ -58,7 +57,12 @@ function History() {
                 <MDBCardBody>
                   <p style={{ fontSize: "12px" }}>Donated amount:</p>
                   <MDBCardText style={{ fontSize: "15px" }}>
-                    {donation.amount}&#8364;
+                    $
+                    {new Intl.NumberFormat(undefined, {
+                      style: "currency",
+                      currency: "EUR",
+                    }).format(donation.amount)}
+                    ;
                   </MDBCardText>
                   <MDBCardText style={{ fontSize: "18px" }}>
                     {donation.name}
