@@ -117,7 +117,7 @@ function Register() {
               />
             </div>
             <button
-              className="button-1 mb-4 w-100 gradient-custom-4"
+              className="button-1 mb-4  gradient-custom-4"
               size="lg"
               type="submit"
             >

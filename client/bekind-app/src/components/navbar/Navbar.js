@@ -10,20 +10,23 @@ import {
   MDBNavbarBrand,
   MDBCollapse,
 } from "mdb-react-ui-kit";
-
+import bee from "../navbar/bee.png";
+import "../navbar/Navbar.css";
 const Navbar = ({ userState }) => {
   const [showNavColorSecond, setShowNavColorSecond] = useState(false);
   return (
     <>
       {userState ? (
-        <MDBNavbar expand="lg" bgColor="dark ">
+        <MDBNavbar expand="lg" bgColor="light">
           <MDBContainer fluid>
             <MDBNavbarBrand className="m-2 fs-1">
-              <Link to="/" className="text-light">
-                <MDBIcon fas icon="hands" /> BeKind
+              <Link to="/" className="text-dark">
+                <img src={bee} alt="bee" style={{ width: "1em" }} />
+                Kind
               </Link>
             </MDBNavbarBrand>
             <MDBNavbarToggler
+              style={{ color: "black" }}
               type="button"
               data-target="#navbarColor02"
               aria-controls="navbarColor02"
@@ -35,23 +38,23 @@ const Navbar = ({ userState }) => {
             </MDBNavbarToggler>
             <MDBCollapse show={showNavColorSecond} navbar id="navbarColor02">
               <MDBNavbarNav className="me-auto mb-2 mb-lg-0 container">
-                <MDBNavbarItem className="m-4 list active">
-                  <Link to="/" className="text-light">
+                <MDBNavbarItem className="m-4  active">
+                  <Link to="/" className="text-dark list">
                     Homepage
                   </Link>
                 </MDBNavbarItem>
                 <MDBNavbarItem className="m-4 list">
-                  <Link to="/search" className="text-light">
+                  <Link to="/search" className="text-dark">
                     Search for a donation
                   </Link>
                 </MDBNavbarItem>
                 <MDBNavbarItem className="m-4 list">
-                  <Link to="/history" className="text-light">
+                  <Link to="/history" className="text-dark">
                     My Donations
                   </Link>
                 </MDBNavbarItem>
                 <MDBNavbarItem className="m-4 list">
-                  <Link to="/logout" className="text-light">
+                  <Link to="/logout" className="text-dark">
                     Log out
                   </Link>
                 </MDBNavbarItem>
@@ -60,14 +63,17 @@ const Navbar = ({ userState }) => {
           </MDBContainer>
         </MDBNavbar>
       ) : (
-        <MDBNavbar expand="lg" bgColor="dark ">
+        <MDBNavbar expand="lg" bgColor="light ">
           <MDBContainer fluid>
             <MDBNavbarBrand className="m-2 fs-1 ">
-              <Link to="/" className="text-light">
-                <MDBIcon fas icon="hands" /> BeKind
+              <Link to="/" className="text-dark">
+                <MDBIcon fas icon="hands" />
+                <img src={bee} alt="bee" style={{ width: "1em" }} />
+                BeKind
               </Link>
             </MDBNavbarBrand>
             <MDBNavbarToggler
+              style={{ color: "black" }}
               type="button"
               data-target="#navbarColor02"
               aria-controls="navbarColor02"
@@ -80,12 +86,12 @@ const Navbar = ({ userState }) => {
             <MDBCollapse show={showNavColorSecond} navbar id="navbarColor02">
               <MDBNavbarNav className="me-auto mb-2 mb-lg-0">
                 <MDBNavbarItem className="m-4">
-                  <Link to="/register" className="text-light">
+                  <Link to="/register" className="text-dark">
                     Register
                   </Link>
                 </MDBNavbarItem>
                 <MDBNavbarItem className="m-4">
-                  <Link to="/login" className="text-light">
+                  <Link to="/login" className="text-dark">
                     Login
                   </Link>
                 </MDBNavbarItem>

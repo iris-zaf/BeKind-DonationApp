@@ -1,0 +1,25 @@
+.navbar-collapse {
+  flex-grow: 0;
+}
+.list {
+  display: inline-block;
+  position: relative;
+  color: #0087ca;
+}
+.list:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: rgb(20, 33, 61);
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.list:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}

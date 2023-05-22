@@ -1,14 +1,14 @@
 button {
   background-color: rgb(20, 33, 61);
   color: white;
-  display: inline-flex;
+
   border-radius: 8px;
 }
 
 .button1 {
   background: none;
   border: 2px solid;
-  border-bottom-width: 4px;
+  border: 4px;
   font: inherit;
   letter-spacing: inherit;
 
@@ -28,6 +28,91 @@ button {
     radial-gradient(circle, #fdaa2f 0.2em, transparent 0.25em) 6.25em 6.25em/1.25em
       1.25em;
   color: #6d4407;
+}
+.cardContainer {
+  margin: 2em;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+    rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+.btnDonate {
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  user-select: none;
+  letter-spacing: 1px;
+  color: white;
+  background-color: #f59200;
+  text-transform: uppercase;
+  transition: all 0.1s ease-out;
+  transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
+}
+.btnDonate:hover {
+  background-color: antiquewhite;
+  color: #fff;
+  outline: 0;
+  box-shadow: 0 0 40px 40px rgb(20, 33, 61) inset;
+}
+.btnDonate:active {
+  transform: scale(0.95);
+}
+[aria-live="polite"] {
+  display: none;
+}
+/*below the link button */
+.wrapper {
+  display: flex;
+}
+.wrapper a {
+  color: white;
+}
+.cta {
+  display: flex;
+  padding: 0px 10px;
+  text-decoration: none;
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  color: white;
+  background: rgb(20, 33, 61);
+  transition: 1s;
+  box-shadow: 6px 6px 0 black;
+  transform: skewX(-23deg);
+}
+.cta:focus {
+  outline: none;
+}
+
+.cta:hover {
+  transition: 0.5s;
+  box-shadow: 8px 6px 0 #fbc638;
+}
+
+.cta span:nth-child(2) {
+  transition: 0.5s;
+  margin-right: 0px;
+}
+
+.cta:hover span:nth-child(2) {
+  transition: 0.5s;
+  margin-right: 45px;
+}
+
+span {
+  transform: skewX(15deg);
+}
+
+span:nth-child(2) {
+  width: 15px;
+  margin-left: 10px;
+  position: relative;
+  top: 2%;
+}
+
+.cardImg {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 8%;
 }
 
 @keyframes halftone {
