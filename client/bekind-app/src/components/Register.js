@@ -52,7 +52,7 @@ function Register() {
         className="d-flex align-items-center justify-content-center bg-image"
         style={{
           backgroundImage:
-            "url(https://mdbcdn.b-cdn.net/img/Photos/new-templates/search-box/img4.webp)",
+            "url(https://images.unsplash.com/photo-1464047736614-af63643285bf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80)",
         }}
       >
         <div className="mask gradient-custom-3"></div>
