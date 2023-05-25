@@ -28,7 +28,7 @@ function Login(props) {
     const result = await PostLogin(userData);
     if (result) {
       props.onLogin(true);
-      navigate("/search");
+      navigate("/");
     }
   };
 

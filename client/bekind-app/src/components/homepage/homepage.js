@@ -21,17 +21,14 @@ import facebook from "../homepage/icons8-facebook-50.png";
 import twitter from "../homepage/icons8-twitter-50.png";
 function Home() {
   const [recipient_email, setEmail] = useState("");
-  const [subject, setSubject] = useState("");
-  const [message, setMessage] = useState("");
+  // const [subject, setSubject] = useState("");
+  // const [message, setMessage] = useState("");
 
   function sendMail() {
-    if (recipient_email && subject && message) {
+    if (recipient_email) {
       axios
         .post("http://localhost:8080/send_email", {
           recipient_email,
-
-          subject,
-          message,
         })
         .then(() => alert("Message send successfully"))
         .catch((error) => console.log(error));
@@ -155,12 +152,18 @@ function Home() {
             justifyContent: "space-between",
           }}
         >
-          <MDBCard className="contactCard justify-content-center align-items-center p-4">
-            <MDBCardTitle className="fs-6 m-4">
-              Let us know your thoughts,<br></br>
-              Share your ideas💫
+          <MDBCard className="contactCard justify-content-center align-items-center p-4 ">
+            <MDBCardTitle className="fs-5 ">
+              Subscribe to our newsletter✉️
             </MDBCardTitle>
             <MDBInput
+              type="email"
+              id="form4Example2"
+              wrapperClass="mb-4 mt-3"
+              label="Email address"
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            {/* <MDBInput
               wrapperClass="mb-5"
               textarea
               id="form4Example3"
@@ -169,19 +172,15 @@ function Home() {
               onChange={(e) => setSubject(e.target.value)}
             />
             <MDBInput
-              wrapperClass="mb-5 p-1"
+              wrapperClass="mb-5"
               textarea
               id="form4Example3"
               rows={4}
               label="Message"
               onChange={(e) => setMessage(e.target.value)}
-            />
+            /> */}
 
-            <button
-              type="submit"
-              onClick={() => sendMail()}
-              onChange={(e) => setEmail(e.target.value)}
-            >
+            <button type="submit" onClick={() => sendMail()}>
               Stay in touch
             </button>
           </MDBCard>

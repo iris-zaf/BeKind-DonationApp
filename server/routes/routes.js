@@ -116,7 +116,7 @@ router.post("/create-payment-intent", async (req, res) => {
 //   res.send("Email send!");
 // });
 
-function sendEmail({ recipient_email, subject, message }) {
+function sendEmail({ recipient_email }) {
   return new Promise((resolve, reject) => {
     let transporter = nodemailer.createTransport({
       service: "gmail",
@@ -128,8 +128,8 @@ function sendEmail({ recipient_email, subject, message }) {
     const mail_configs = {
       from: "",
       to: recipient_email,
-      subject: subject,
-      text: message,
+
+      text: "Thank you for subscribing! You will get the latest news about new charities and ways to donate!",
     };
     transporter.sendMail(mail_configs, function (error, info) {
       if (error) {
