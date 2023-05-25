@@ -40,7 +40,7 @@ const Navbar = ({ userState }) => {
               <MDBNavbarNav className="me-auto mb-2 mb-lg-0 container">
                 <MDBNavbarItem className="m-4  active">
                   <Link to="/" className="text-dark list">
-                    Homepage
+                    Home
                   </Link>
                 </MDBNavbarItem>
                 <MDBNavbarItem className="m-4 list">
@@ -67,7 +67,6 @@ const Navbar = ({ userState }) => {
           <MDBContainer fluid>
             <MDBNavbarBrand className="m-2 fs-1 ">
               <Link to="/" className="text-dark">
-                <MDBIcon fas icon="hands" />
                 <img src={bee} alt="bee" style={{ width: "1em" }} />
                 BeKind
               </Link>

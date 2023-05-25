@@ -57,12 +57,10 @@ function History() {
                 <MDBCardBody>
                   <p style={{ fontSize: "12px" }}>Donated amount:</p>
                   <MDBCardText style={{ fontSize: "15px" }}>
-                    $
                     {new Intl.NumberFormat(undefined, {
                       style: "currency",
                       currency: "EUR",
                     }).format(donation.amount)}
-                    ;
                   </MDBCardText>
                   <MDBCardText style={{ fontSize: "18px" }}>
                     {donation.name}

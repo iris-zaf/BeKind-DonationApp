@@ -1,6 +1,7 @@
 const express = require("express");
 
 const router = express.Router();
+const nodemailer = require("nodemailer");
 
 const verifyToken = require("../authorize");
 //here I will add my controllers
@@ -62,11 +63,6 @@ router.get("/history", verifyToken, async (req, res) => {
 //variables for stripe-server side post request to request the payment
 const stripe = require("stripe")(process.env.STRIPE_PRIVATE_KEY);
 
-//below it is just a test-i will need to implement the every.org donation API
-// const storeItems = new Map([
-//   [1, { priceInCents: 1000, name: "Learn React" }],
-//   [2, { priceInCents: 2000, name: "Learn CSS" }],
-// ]);
 router.get("/config", (req, res) => {
   res.send({
     publishableKey: process.env.STRIPE_PUBLISHABLE_KEY,
@@ -92,4 +88,69 @@ router.post("/create-payment-intent", async (req, res) => {
     res.status(400).send({ error: { message: e.message } });
   }
 });
+
+//below the path to send a subscription alert to the user email
+// router.post("/", async (req, res) => {
+//   const { email } = req.body;
+//   let transporter = nodemailer.createTransport({
+//     host: "smtp.ethereal.email",
+//     port: 587,
+//     auth: {
+//       user: "napoleon.stanton5@ethereal.email",
+//       pass: "xugMurEjFXZvbhyMux",
+//     },
+//   });
+//   const msg = {
+//     from: '"The Express App" <theExpressApp@example.com>', // sender address
+//     to: `${email}`, // list of receivers
+//     subject: "Welcome to our newsletter 💓", // Subject line
+//     text: "Thank you for subscribing to our newsletter. You will receive daily updated with the most recent charities and ways to donate. 🤘", // plain text body
+//     // html: "<b>Hello world?</b>", // html body
+//   };
+
+//   const info = await transporter.sendMail(msg);
+
+//   console.log("Message sent: %s", info.messageId);
+
+//   console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
+//   res.send("Email send!");
+// });
+
+function sendEmail({ recipient_email, subject, message }) {
+  return new Promise((resolve, reject) => {
+    let transporter = nodemailer.createTransport({
+      service: "gmail",
+      auth: {
+        user: "iriri2313@gmail.com",
+        pass: "qmcvvfqvdphniisy",
+      },
+    });
+    const mail_configs = {
+      from: "",
+      to: recipient_email,
+      subject: subject,
+      text: message,
+    };
+    transporter.sendMail(mail_configs, function (error, info) {
+      if (error) {
+        console.log(error);
+        return reject({ message: `  An error has occured` });
+      }
+      return resolve({ message: `Email send successfully` });
+    });
+  });
+}
+
+router.get("/", (req, res) => {
+  sendEmail()
+    .then((response) => res.send(response.message))
+    .catch((error) => res.status(500).send(error.message));
+});
+
+router.post("/send_email", (req, res) => {
+  sendEmail(req.body)
+    .then((response) => res.send(response.message))
+    .catch((error) => res.status(500).send(error.message));
+});
+
 module.exports = router;
