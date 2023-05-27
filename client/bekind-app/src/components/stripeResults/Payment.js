@@ -25,10 +25,11 @@ function Payment(props) {
       body: JSON.stringify({ amount: props.amount * 100 }),
     }).then(async (r) => {
       const { clientSecret } = await r.json();
-      console.log("clientSecret", clientSecret);
+      // console.log("clientSecret", clientSecret);
       setClientSecret(clientSecret);
     });
   }, []);
+
   // console.log("clientSecret", clientSecret);
   // console.log("stripePromise", stripePromise);
   return (

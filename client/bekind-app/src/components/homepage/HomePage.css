@@ -1,3 +1,7 @@
+body {
+  background: #c8efed;
+}
+
 .img-fluid {
   border-radius: 30em;
 }
@@ -41,9 +45,8 @@
 
 /* bellow the testimonials styling */
 .carousel-root {
-  width: 64% !important;
+  width: 40% !important;
   margin: auto !important;
-  margin-top: 3% !important;
 }
 
 .carousel .slide {
@@ -98,7 +101,7 @@
 
 .myCarousel p {
   font-weight: 100 !important;
-  line-height: 29px !important;
+  line-height: 20px !important;
   color: #222;
   font-size: 15px;
   font-family: sans-serif;
@@ -156,7 +159,7 @@
 @media only screen and (max-width: 934px) {
   .carousel-root {
     outline: 0;
-    width: 93% !important;
+    width: 60% !important;
     margin: auto !important;
   }
 
@@ -164,17 +167,17 @@
     display: none !important;
   }
   .myCarousel {
-    background: #fafafa;
-    margin-top: -9%;
-    width: 88%;
+    background: transparent;
+
+    width: 60%;
     margin-left: auto;
     margin-right: auto;
     padding-top: 8%;
     padding-bottom: 12.5%;
     padding-left: 5%;
     padding-right: 5%;
-    border: 1px solid #ddd;
-    height: 269px;
+    border: none;
+    height: 300px;
   }
 
   .carousel .slide img {

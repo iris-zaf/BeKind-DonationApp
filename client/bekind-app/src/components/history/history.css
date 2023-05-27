@@ -1,0 +1,23 @@
+.imageContainer {
+  width: 100%;
+  margin: 0 auto;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+img {
+  width: 100%;
+  object-fit: contain;
+}
+.title-name {
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: 2rem;
+}
+.myDonation {
+  margin-top: 2em;
+  font-weight: 600;
+}

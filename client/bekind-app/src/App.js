@@ -1,16 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
-import Login from "./components/Login";
+import Login from "./components/login/Login";
 import Register from "./components/Register";
 import "./App.css";
 import Navbar from "./components/navbar/Navbar";
-
 import Success from "./components/stripeResults/Success";
 import Error from "./components/stripeResults/Error";
 import Logout from "./components/Logout";
 import DonationSearch from "./components/donationSearch/donationSearch";
 import Home from "./components/homepage/homepage";
-import History from "./components/History";
+import History from "./components/history/History";
 import Payment from "./components/stripeResults/Payment";
 
 function App() {
@@ -30,20 +29,21 @@ function App() {
     <div>
       {loading ? (
         <>
-          <div>
-            <div class="multi-spinner-container">
-              <div class="multi-spinner">
-                <div class="multi-spinner">
-                  <div class="multi-spinner">
-                    <div class="multi-spinner">
-                      <div class="multi-spinner">
-                        <div class="multi-spinner"></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div class="multi-spinner-container">
+            <lottie-player
+              src="https://assets2.lottiefiles.com/packages/lf20_pZ0gNA6nQF.json"
+              background="transparent"
+              speed="1"
+              style={{
+                width: " 8em",
+                height: "8em",
+
+                top: "50%",
+                left: "50% ",
+              }}
+              loop
+              autoplay
+            ></lottie-player>{" "}
           </div>
         </>
       ) : (

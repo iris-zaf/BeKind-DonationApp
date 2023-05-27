@@ -89,33 +89,6 @@ router.post("/create-payment-intent", async (req, res) => {
   }
 });
 
-//below the path to send a subscription alert to the user email
-// router.post("/", async (req, res) => {
-//   const { email } = req.body;
-//   let transporter = nodemailer.createTransport({
-//     host: "smtp.ethereal.email",
-//     port: 587,
-//     auth: {
-//       user: "napoleon.stanton5@ethereal.email",
-//       pass: "xugMurEjFXZvbhyMux",
-//     },
-//   });
-//   const msg = {
-//     from: '"The Express App" <theExpressApp@example.com>', // sender address
-//     to: `${email}`, // list of receivers
-//     subject: "Welcome to our newsletter 💓", // Subject line
-//     text: "Thank you for subscribing to our newsletter. You will receive daily updated with the most recent charities and ways to donate. 🤘", // plain text body
-//     // html: "<b>Hello world?</b>", // html body
-//   };
-
-//   const info = await transporter.sendMail(msg);
-
-//   console.log("Message sent: %s", info.messageId);
-
-//   console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
-//   res.send("Email send!");
-// });
-
 function sendEmail({ recipient_email }) {
   return new Promise((resolve, reject) => {
     let transporter = nodemailer.createTransport({

@@ -12,10 +12,11 @@ import {
   MDBContainer,
 } from "mdb-react-ui-kit";
 import "../homepage/HomePage.css";
+
 import axios from "axios";
 import Testimonials from "../homepage/Testimonials";
 import BackToTopButton from "../homepage/BackToTop";
-import heartHands from "../homepage/heart-hands.avif";
+
 import instagram from "../homepage/icons8-instagram-100.png";
 import facebook from "../homepage/icons8-facebook-50.png";
 import twitter from "../homepage/icons8-twitter-50.png";
@@ -126,12 +127,24 @@ function Home() {
           </MDBCol>
         </MDBCol>
         <MDBCol col="5" md="6">
-          <img src={heartHands} className="img-fluid" alt="love-hands" />
+          <lottie-player
+            src="https://assets10.lottiefiles.com/packages/lf20_3dweyago.json"
+            background="transparent"
+            speed="1"
+            style={{
+              width: "60vw",
+              height: "80vh",
+              margin: "auto",
+              display: "block",
+            }}
+            loop
+            autoplay
+          ></lottie-player>
         </MDBCol>
       </MDBRow>{" "}
       <MDBRow>
         <MDBCol className="testimonials">
-          <h5>Users experiences with us</h5>
+          <h5>What volunteers say about us</h5>
           <div>
             <Testimonials />
           </div>

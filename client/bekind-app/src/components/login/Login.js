@@ -10,7 +10,8 @@ import {
   MDBInput,
   MDBIcon,
 } from "mdb-react-ui-kit";
-import "../components/donationSearch/donationSearch.css";
+import "../donationSearch/donationSearch.css";
+import "../login/login.css";
 function Login(props) {
   const navigate = useNavigate();
   const {
@@ -51,7 +52,7 @@ function Login(props) {
       <MDBContainer className="my-2 gradient-form " fluid>
         <MDBRow>
           <MDBCol sm="6">
-            <div className=" flex-column col-8 ms-4">
+            <div className=" flex-column col-4  login-card">
               <div className="text-center">
                 <MDBIcon
                   fas
@@ -96,11 +97,11 @@ function Login(props) {
               {errors.password && (
                 <p className="errorMsg">{errors.password.message}</p>
               )}
-              <div className="text-center pt-1 mb-5 pb-1">
-                <button className="mb-3 " type="submit">
+              <div className="text-center mb-5 pb-1">
+                <button type="submit" className="cta bg-">
                   Sign in
                 </button>
-                <h5 className="small text-muted mb-5 ">
+                <h5 className="small  mb-5 ">
                   Don't have an account? <Link to="/register">Register</Link>
                 </h5>
                 <p>Follow our latest stories and new ways to donate:</p>
@@ -136,10 +137,14 @@ function Login(props) {
           </MDBCol>
 
           <MDBCol sm="6" className="d-none d-sm-block px-0">
-            <img
-              src="https://images.pexels.com/photos/6646917/pexels-photo-6646917.jpeg?auto=compress&cs=tinysrgb&w=600"
-              alt="sideImage"
-            ></img>
+            <lottie-player
+              src="https://assets10.lottiefiles.com/packages/lf20_6ejDeXulHz.json"
+              background="transparent"
+              speed="1"
+              style={{ width: " 500px", height: "500px" }}
+              loop
+              autoplay
+            ></lottie-player>
           </MDBCol>
         </MDBRow>
       </MDBContainer>

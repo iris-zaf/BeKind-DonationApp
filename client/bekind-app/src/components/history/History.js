@@ -10,7 +10,7 @@ import {
   MDBCard,
   MDBCardText,
 } from "mdb-react-ui-kit";
-
+import "../history/history.css";
 import { useState, useEffect } from "react";
 
 function History() {
@@ -36,7 +36,19 @@ function History() {
 
   return (
     <>
-      <h4 style={{ margin: "2em" }}>My Donations </h4>
+      <div style={{ display: "flex" }}>
+        {" "}
+        <lottie-player
+          src="https://assets8.lottiefiles.com/packages/lf20_udTJtk.json"
+          background="transparent"
+          speed="1"
+          style={{ width: " 7em", height: "7em" }}
+          loop
+          autoplay
+        ></lottie-player>
+        <h4 className="myDonation">My Donations </h4>
+      </div>
+
       <MDBContainer fluid className="my-5 d-flex">
         {" "}
         <MDBRow className="w-100 row-cols-1 row-cols-md-5">
@@ -45,16 +57,18 @@ function History() {
               <MDBCard
                 key={donation.id}
                 style={{
-                  border: "3px solid  rgb(253,170,47)",
                   margin: "2em",
                 }}
               >
-                <MDBCardImage
-                  position="top"
-                  alt="..."
-                  src={donation.coverImageUrl}
-                />
-                <MDBCardBody>
+                <div className="imageContainer">
+                  <MDBCardImage
+                    className="cardImg"
+                    position="top"
+                    alt="card-image"
+                    src={donation.coverImageUrl}
+                  />
+                </div>
+                <MDBCardBody className="p-2">
                   <p style={{ fontSize: "12px" }}>Donated amount:</p>
                   <MDBCardText style={{ fontSize: "15px" }}>
                     {new Intl.NumberFormat(undefined, {
@@ -62,7 +76,7 @@ function History() {
                       currency: "EUR",
                     }).format(donation.amount)}
                   </MDBCardText>
-                  <MDBCardText style={{ fontSize: "18px" }}>
+                  <MDBCardText className="title-name">
                     {donation.name}
                   </MDBCardText>
                   <MDBCardText style={{ fontSize: "12px" }}>

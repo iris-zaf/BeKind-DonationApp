@@ -6,7 +6,8 @@ import {
 } from "@stripe/react-stripe-js";
 
 import "./checkout.css";
-
+// import Cards from "react-credit-cards";
+import { MDBRow, MDBCol } from "mdb-react-ui-kit";
 function CheckoutForm(props) {
   const stripe = useStripe();
   const elements = useElements();
@@ -39,25 +40,46 @@ function CheckoutForm(props) {
 
   return (
     <>
-      <form id="payment-form" onSubmit={handleSubmit}>
-        <h5 style={{ marginBottom: "5em", fontWeight: "bold" }}>
-          Add your payment details
-        </h5>
-        <PaymentElement id="payment-element" />
+      <MDBRow>
+        <MDBCol>
+          <lottie-player
+            src="https://assets6.lottiefiles.com/private_files/lf30_4b8xfsqj.json"
+            background="transparent"
+            speed="1"
+            style={{ width: "400px", height: "400px" }}
+            loop
+            autoplay
+          ></lottie-player>
+        </MDBCol>
 
-        <button disabled={isProcessing || !stripe || !elements} id="submit">
-          <span id="button-text">
-            {isProcessing
-              ? "Processing ..."
-              : ` Pay now ${new Intl.NumberFormat(undefined, {
-                  style: "currency",
-                  currency: "EUR",
-                }).format(props.amount)}`}
-          </span>
-          <div> </div>
-        </button>
-        {message && <div id="payment-message">{message}</div>}
-      </form>
+        <MDBCol>
+          <form id="PaymentForm" onSubmit={handleSubmit}>
+            <h5
+              style={{
+                marginBottom: "2em",
+                marginTop: "2em",
+                fontWeight: "600",
+              }}
+            >
+              Add your payment details
+            </h5>
+
+            <PaymentElement id="payment-element" />
+
+            <button disabled={isProcessing || !stripe || !elements} id="submit">
+              <span id="button-text">
+                {isProcessing
+                  ? "Processing ..."
+                  : ` Pay  ${new Intl.NumberFormat(undefined, {
+                      style: "currency",
+                      currency: "EUR",
+                    }).format(props.amount)}`}
+              </span>
+            </button>
+            {message && <div id="payment-message">{message}</div>}
+          </form>
+        </MDBCol>
+      </MDBRow>
     </>
   );
 }

@@ -37,7 +37,10 @@ const Navbar = ({ userState }) => {
               <MDBIcon icon="bars" fas />
             </MDBNavbarToggler>
             <MDBCollapse show={showNavColorSecond} navbar id="navbarColor02">
-              <MDBNavbarNav className="me-auto mb-2 mb-lg-0 container">
+              <MDBNavbarNav
+                className="me-auto mb-2 mb-lg-0 container "
+                style={{ alignItems: "center" }}
+              >
                 <MDBNavbarItem className="m-4  active">
                   <Link to="/" className="text-dark list">
                     Home
@@ -83,7 +86,10 @@ const Navbar = ({ userState }) => {
               <MDBIcon icon="bars" fas />
             </MDBNavbarToggler>
             <MDBCollapse show={showNavColorSecond} navbar id="navbarColor02">
-              <MDBNavbarNav className="me-auto mb-2 mb-lg-0">
+              <MDBNavbarNav
+                className="me-auto mb-2 mb-lg-0"
+                style={{ alignItems: "center" }}
+              >
                 <MDBNavbarItem className="m-4">
                   <Link to="/register" className="text-dark">
                     Register

@@ -5,7 +5,7 @@ button {
   border-radius: 8px;
 }
 
-.button1 {
+/* .button1 {
   background: none;
   border: 2px solid;
   border: 4px;
@@ -28,7 +28,7 @@ button {
     radial-gradient(circle, #fdaa2f 0.2em, transparent 0.25em) 6.25em 6.25em/1.25em
       1.25em;
   color: #6d4407;
-}
+} */
 .cardContainer {
   margin: 2em;
   box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
@@ -60,69 +60,48 @@ button {
   display: none;
 }
 /*below the link button */
-.wrapper {
+/* 
+/* .wrapper {
   display: flex;
-}
-.wrapper a {
-  color: white;
+} */
+*/ .wrapper {
+  position: relative;
 }
 .cta {
-  display: flex;
-  padding: 0px 10px;
-  text-decoration: none;
-  font-family: "Poppins", sans-serif;
-  font-size: 12px;
-  color: white;
-  background: rgb(20, 33, 61);
-  transition: 1s;
-  box-shadow: 6px 6px 0 black;
-  transform: skewX(-23deg);
-}
-.cta:focus {
-  outline: none;
-}
-
-.cta:hover {
-  transition: 0.5s;
-  box-shadow: 8px 6px 0 #fbc638;
-}
-
-.cta span:nth-child(2) {
-  transition: 0.5s;
-  margin-right: 0px;
-}
-
-.cta:hover span:nth-child(2) {
-  transition: 0.5s;
-  margin-right: 45px;
-}
-
-span {
-  transform: skewX(15deg);
-}
-
-span:nth-child(2) {
-  width: 15px;
-  margin-left: 10px;
+  color: #03b664;
+  font-weight: 500;
+  font-size: 15px;
+  padding: 5px;
+  border: 0;
+  border-radius: 50px;
+  text-transform: capitalize;
+  display: block;
+  border: 1px solid #03b664;
+  display: inline-block;
+  overflow: hidden;
   position: relative;
-  top: 2%;
+  transition: color 0.4s linear;
+}
+.cta:hover {
+  background-color: #03b664;
+  color: #fff;
 }
 
-.cardImg {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
-  border-radius: 8%;
+.cta::before {
+  transform: scaleX(0);
+}
+.cta:hover::before {
+  transform: scaleX(1);
 }
 
-@keyframes halftone {
-  100% {
-    background-size: 2.375em 2.375em, 0.1em 0.1em;
-  }
+.imageCont {
+  width: 100%;
+  height: 250px;
 }
 
-@keyframes halftone {
-  100% {
-    background-size: 2.375em 2.375em, 0.1em 0.1em;
+@media only screen and (max-width: 850px) {
+  .cardContainer {
+    margin: 0;
+    margin-bottom: 1em;
   }
 }

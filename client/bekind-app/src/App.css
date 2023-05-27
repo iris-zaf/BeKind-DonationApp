@@ -1,46 +1,7 @@
-.flexbox {
-  display: flex;
-
-  flex-wrap: wrap;
-}
-
-.flexbox > div {
-  flex: 0 0 25%;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-
-  box-sizing: border-box;
-
-  overflow: hidden;
-}
 .multi-spinner-container {
   position: fixed;
   top: 50%;
   left: 50%;
   /* bring your own prefixes */
   transform: translate(-50%, -50%);
-  width: 150px;
-  height: 150px;
-
-  margin: 30px auto;
-  overflow: hidden;
-}
-
-.multi-spinner {
-  position: absolute;
-  width: calc(100% - 9.9px);
-  height: calc(100% - 9.9px);
-  border: 5px solid transparent;
-  border-top-color: #ff5722;
-  border-radius: 50%;
-
-  animation: spin 5s cubic-bezier(0.17, 0.49, 0.96, 0.76) infinite;
-}
-
-@keyframes spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }

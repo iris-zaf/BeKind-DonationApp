@@ -14,25 +14,25 @@ function Testimonials() {
       autoPlay={true}
       interval={6100}
     >
-      <div>
+      <div className="myCarousel">
         <img src={Akis} alt="Akis" />
-        <div className="myCarousel">
+        <div>
           <h3>Akis</h3>
           <h4>Volunteer</h4>
           <p>The experience was amazing</p>
         </div>
       </div>
-      <div>
+      <div className="myCarousel">
         <img src={Daniel} alt="Daniel" />
-        <div className="myCarousel">
+        <div>
           <h3>Daniel</h3>
           <h4>Designer</h4>
-          <p>Working for a good cause always feels amazing!</p>
+          <p>Working for a good cause always feels incredible</p>
         </div>
       </div>
-      <div>
+      <div className="myCarousel">
         <img src={Mary} alt="Mary" />
-        <div className="myCarousel">
+        <div>
           <h3>Mary</h3>
           <h4>Designer</h4>
           <p>The donating process was easy, thanks!</p>

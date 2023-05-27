@@ -8,19 +8,27 @@ export default function Success() {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        height: "100vh",
+        marginTop: "3em",
       }}
     >
-      <img
-        src={myGif}
-        alt="saveMoney"
-        position="top"
-        style={{
-          width: "10em",
-        }}
-      />
-
-      <p>Thank you for your donation 💫</p>
+      {" "}
+      <lottie-player
+        src="https://assets6.lottiefiles.com/packages/lf20_bskjzmma.json"
+        background="transparent"
+        speed="1"
+        style={{ width: "200px", height: "200px" }}
+        loop
+        autoplay
+      ></lottie-player>
+      <h2>💫Thank you for your donation 💫</h2>{" "}
+      <lottie-player
+        src="https://assets6.lottiefiles.com/packages/lf20_bskjzmma.json"
+        background="transparent"
+        speed="1"
+        style={{ width: "200px", height: "200px" }}
+        loop
+        autoplay
+      ></lottie-player>
     </div>
   );
 }
