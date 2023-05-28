@@ -5,30 +5,6 @@ button {
   border-radius: 8px;
 }
 
-/* .button1 {
-  background: none;
-  border: 2px solid;
-  border: 4px;
-  font: inherit;
-  letter-spacing: inherit;
-
-  text-transform: inherit;
-  width: 30%;
-  transition: color 1s;
-}
-
-.button1 {
-  color: #f59200;
-}
-.button1:hover {
-  -webkit-animation: halftone 1s forwards;
-  animation: halftone 1s forwards;
-  background: radial-gradient(circle, #fdaa2f 0.2em, transparent 0.25em) 0 0/1.25em
-      1.25em,
-    radial-gradient(circle, #fdaa2f 0.2em, transparent 0.25em) 6.25em 6.25em/1.25em
-      1.25em;
-  color: #6d4407;
-} */
 .cardContainer {
   margin: 2em;
   box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
@@ -59,12 +35,7 @@ button {
 [aria-live="polite"] {
   display: none;
 }
-/*below the link button */
-/* 
-/* .wrapper {
-  display: flex;
-} */
-*/ .wrapper {
+.wrapper {
   position: relative;
 }
 .cta {
