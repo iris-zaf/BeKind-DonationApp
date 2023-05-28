@@ -6,7 +6,7 @@ import "./App.css";
 import Navbar from "./components/navbar/Navbar";
 import Success from "./components/stripeResults/Success";
 import Error from "./components/stripeResults/Error";
-import Logout from "./components/Logout";
+import Logout from "./components/logout/Logout";
 import DonationSearch from "./components/donationSearch/donationSearch";
 import Home from "./components/homepage/homepage";
 import History from "./components/history/History";
