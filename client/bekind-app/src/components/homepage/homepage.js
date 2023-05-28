@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import {
   MDBInput,
@@ -10,9 +10,11 @@ import {
   MDBCol,
   MDBIcon,
   MDBContainer,
+  MDBAccordion,
+  MDBAccordionItem,
 } from "mdb-react-ui-kit";
 import "../homepage/HomePage.css";
-
+import Popup from "../popup/Popup";
 import axios from "axios";
 import Testimonials from "../homepage/Testimonials";
 import BackToTopButton from "../homepage/BackToTop";
@@ -22,9 +24,8 @@ import facebook from "../homepage/icons8-facebook-50.png";
 import twitter from "../homepage/icons8-twitter-50.png";
 function Home() {
   const [recipient_email, setEmail] = useState("");
-  // const [subject, setSubject] = useState("");
-  // const [message, setMessage] = useState("");
 
+  const [timedPopup, setTimedPopup] = useState(false);
   function sendMail() {
     if (recipient_email) {
       axios
@@ -38,108 +39,90 @@ function Home() {
     return alert("Fill in all the fields to continue");
   }
 
+  useEffect(() => {
+    setTimeout(() => {
+      setTimedPopup(true);
+    }, 2000);
+  }, []);
+
   return (
     <div className="smallCardsCont">
-      <MDBContainer fluid className="p-5 my-5 section">
-        <MDBRow>
-          <MDBCol col="10" md="6">
-            <img
-              src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
-              className="img-fluid"
-              alt="Children image"
-            />
-          </MDBCol>
-
-          <MDBCol col="5" md="5">
-            <div class="animatedText">Simple, </div>
-            <div class="animatedText">
-              <span> Powerful Charities</span>
+      <MDBContainer fluid className="p-0">
+        <div class="demo-content">
+          <div className="demo-wrap">
+            <div className="text-wrap">
+              <div class="animatedText">Simple, </div>
+              <div class="animatedText">
+                <span> Powerful Charities</span>
+              </div>
+              <br></br>
+              <p>
+                Lorem ipsum dolor sit amet, dico forensibus mei et, nemore
+                albucius nec eu, elitr nonumes graecis pri ex. Ius ea zril
+                expetendis scribentur, et scripta regione nec, pro te audire
+                utroque senserit. Est te sale probo maluisset, ex iusto libris
+                denique nec. Et ornatus ullamcorper est. Lorem ipsum dolor sit
+                amet, dico forensibus mei et, nemore albucius nec eu, elitr
+                nonumes graecis pri ex.
+              </p>
             </div>
-            <br></br>
-            <p>
-              Lorem ipsum dolor sit amet, dico forensibus mei et, nemore
-              albucius nec eu, elitr nonumes graecis pri ex. Ius ea zril
-              expetendis scribentur, et scripta regione nec, pro te audire
-              utroque senserit. Est te sale probo maluisset, ex iusto libris
-              denique nec. Et ornatus ullamcorper est. Lorem ipsum dolor sit
-              amet, dico forensibus mei et, nemore albucius nec eu, elitr
-              nonumes graecis pri ex.
-            </p>
-          </MDBCol>
-        </MDBRow>
+          </div>
+        </div>
       </MDBContainer>
       <MDBRow className="section">
-        <MDBCol col="5" md="5" className="smallCardsCont">
-          <MDBCol>
-            <MDBCard className="box">
-              <MDBIcon
-                fas
-                icon="hands-holding "
-                className=" mt-4 "
-                size="3x"
-                position="top"
-              ></MDBIcon>
-              <MDBCardBody>
-                <MDBCardTitle>Support 50+ nonprofits</MDBCardTitle>
-                <MDBCardText>
-                  Choose from over 50 charities that are making a big impact on
-                  health, children,animals, the environment, education and more
-                </MDBCardText>
-              </MDBCardBody>
-            </MDBCard>
-          </MDBCol>
-          <MDBCol>
-            <MDBCard style={{ backgroundColor: "#e5e5e5" }} className=" box">
-              <MDBIcon
-                fas
-                icon="fist-raised"
-                className=" mt-4 "
-                size="3x"
-                position="top"
-              ></MDBIcon>
-              <MDBCardBody>
-                <MDBCardTitle>Be The Change</MDBCardTitle>
-                <MDBCardText>
-                  Every time you donate you are telling yourself a story about
-                  what's important to you.The results? Empathy, mindfulness and
-                  gratitude!
-                </MDBCardText>
-              </MDBCardBody>
-            </MDBCard>
-          </MDBCol>
-          <MDBCol>
-            <MDBCard className=" box">
-              <MDBIcon
-                fas
-                icon="people-carry "
-                className=" mt-4 "
-                size="3x"
-                position="top"
-              ></MDBIcon>
-              <MDBCardBody>
-                <MDBCardTitle>Help Yourself While Helping Others</MDBCardTitle>
-                <MDBCardText>
-                  Donating for a good cause keeps you motivated and feeling
-                  good🤗
-                </MDBCardText>
-              </MDBCardBody>
-            </MDBCard>
-          </MDBCol>
+        <MDBCol>
+          <MDBCard className="box">
+            <MDBIcon
+              fas
+              icon="hands-holding "
+              className=" mt-4 "
+              size="3x"
+              position="top"
+            ></MDBIcon>
+            <MDBCardBody>
+              <MDBCardTitle>Support 50+ nonprofits</MDBCardTitle>
+              <MDBCardText>
+                Choose from over 50 charities that are making a big impact on
+                health, children,animals, the environment, education and more
+              </MDBCardText>
+            </MDBCardBody>
+          </MDBCard>
         </MDBCol>
-        <MDBCol col="5" md="6">
-          <lottie-player
-            src="https://assets10.lottiefiles.com/packages/lf20_3dweyago.json"
-            background="transparent"
-            speed="1"
-            style={{
-              width: "60vw",
-              height: "80vh",
-              margin: "auto",
-              display: "block",
-            }}
-            loop
-            autoplay
-          ></lottie-player>
+        <MDBCol>
+          <MDBCard className=" box">
+            <MDBIcon
+              fas
+              icon="fist-raised"
+              className=" mt-4 "
+              size="3x"
+              position="top"
+            ></MDBIcon>
+            <MDBCardBody>
+              <MDBCardTitle>Be The Change</MDBCardTitle>
+              <MDBCardText>
+                Every time you donate you are telling yourself a story about
+                what's important to you.The results? Empathy, mindfulness and
+                gratitude!
+              </MDBCardText>
+            </MDBCardBody>
+          </MDBCard>
+        </MDBCol>
+        <MDBCol>
+          <MDBCard className=" box">
+            <MDBIcon
+              fas
+              icon="people-carry "
+              className=" mt-4 "
+              size="3x"
+              position="top"
+            ></MDBIcon>
+            <MDBCardBody>
+              <MDBCardTitle>Help Yourself While Helping Others</MDBCardTitle>
+              <MDBCardText>
+                Donating for a good cause keeps you motivated and feeling good🤗
+              </MDBCardText>
+            </MDBCardBody>
+          </MDBCard>
         </MDBCol>
       </MDBRow>{" "}
       <MDBRow>
@@ -150,7 +133,85 @@ function Home() {
           </div>
         </MDBCol>
       </MDBRow>
-      <MDBRow className="d-flex p-5 section-footer mt-5">
+      <MDBRow style={{ backgroundColor: "rgb(249, 249, 249)" }}>
+        <MDBCol>
+          <MDBAccordion borderless initialActive={1} className="accordion-wrap">
+            {" "}
+            <h2>Frequently asked questions</h2>
+            <MDBAccordionItem
+              collapseId={1}
+              headerTitle="Who are we?"
+              className="accordion"
+            >
+              Anim pariatur cliche reprehenderit, enim eiusmod high life
+              accusamus terry richardson ad squid. 3 wolf moon officia aute, non
+              cupidatat skateboard dolor brunch. Food truck quinoa nesciunt
+              laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird
+              on it squid single-origin coffee nulla assumenda shoreditch et.
+              Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred
+              nesciunt sapiente ea proident. Ad vegan excepteur butcher vice
+              lomo. Leggings occaecat craft beer farm-to-table, raw denim
+              aesthetic synth nesciunt you probably haven't heard of them
+              accusamus labore sustainable VHS.
+            </MDBAccordionItem>
+            <MDBAccordionItem
+              collapseId={2}
+              headerTitle="What is the mission?"
+              className="accordion"
+            >
+              Anim pariatur cliche reprehenderit, enim eiusmod high life
+              accusamus terry richardson ad squid. 3 wolf moon officia aute, non
+              cupidatat skateboard dolor brunch. Food truck quinoa nesciunt
+              laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird
+              on it squid single-origin coffee nulla assumenda shoreditch et.
+              Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred
+              nesciunt sapiente ea proident. Ad vegan excepteur butcher vice
+              lomo. Leggings occaecat craft beer farm-to-table, raw denim
+              aesthetic synth nesciunt you probably haven't heard of them
+              accusamus labore sustainable VHS.
+            </MDBAccordionItem>
+            <MDBAccordionItem
+              collapseId={3}
+              headerTitle="How can I help?"
+              className="accordion"
+            >
+              Anim pariatur cliche reprehenderit, enim eiusmod high life
+              accusamus terry richardson ad squid. 3 wolf moon officia aute, non
+              cupidatat skateboard dolor brunch. Food truck quinoa nesciunt
+              laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird
+              on it squid single-origin coffee nulla assumenda shoreditch et.
+              Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred
+              nesciunt sapiente ea proident. Ad vegan excepteur butcher vice
+              lomo. Leggings occaecat craft beer farm-to-table, raw denim
+              aesthetic synth nesciunt you probably haven't heard of them
+              accusamus labore sustainable VHS.
+            </MDBAccordionItem>
+            <MDBAccordionItem
+              collapseId={4}
+              headerTitle="Where are we located?"
+              className="accordion"
+            >
+              Anim pariatur cliche reprehenderit, enim eiusmod high life
+              accusamus terry richardson ad squid. 3 wolf moon officia aute, non
+              cupidatat skateboard dolor brunch. Food truck quinoa nesciunt
+              laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird
+              on it squid single-origin coffee nulla assumenda shoreditch et.
+              Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred
+              nesciunt sapiente ea proident. Ad vegan excepteur butcher vice
+              lomo. Leggings occaecat craft beer farm-to-table, raw denim
+              aesthetic synth nesciunt you probably haven't heard of them
+              accusamus labore sustainable VHS.
+            </MDBAccordionItem>
+          </MDBAccordion>
+        </MDBCol>
+        <MDBCol className="m-5 heartHands">
+          <img
+            src="https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+            alt="heart-hands"
+          />
+        </MDBCol>
+      </MDBRow>
+      <MDBRow className=" p-5 section-footer mt-5">
         <MDBCol className="footer-list col-3">
           <ul>
             <li>HOME</li>
@@ -159,16 +220,9 @@ function Home() {
             <li>ABOUT</li>
           </ul>
         </MDBCol>
-        <MDBCol
-          className="col-3"
-          style={{
-            justifyContent: "space-between",
-          }}
-        >
+        <MDBCol>
           <MDBCard className="contactCard justify-content-center align-items-center p-4 ">
-            <MDBCardTitle className="fs-5 ">
-              Subscribe to our newsletter✉️
-            </MDBCardTitle>
+            <MDBCardTitle>Subscribe to our newsletter✉️</MDBCardTitle>
             <MDBInput
               type="email"
               id="form4Example2"
@@ -199,12 +253,11 @@ function Home() {
           </MDBCard>
         </MDBCol>
         <MDBCol className="col-3 socialContainer">
-          <h5>FOLLOW US</h5>
           <img src={instagram} className="socialIcons" alt="instagram" />
           <img src={facebook} className="socialIcons" alt="facebook" />
           <img src={twitter} className="socialIcons" alt="facebook" />
         </MDBCol>
-        <MDBCol className="col-3">
+        <MDBCol className="map">
           <h5>Find us here ❣️</h5>
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d101408.21722940248!2d-122.15130702796334!3d37.41331444145766!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb7495bec0189%3A0x7c17d44a466baf9b!2zzpzOrM6_z4XOvc-EzrXOvSDOks65zr_PhSwgzprOsc67zrnPhs-Mz4HOvc65zrEsIM6Xzr3Pic68zq3Ovc61z4IgzqDOv867zrnPhM61zq_Otc-C!5e0!3m2!1sel!2sgr!4v1683709326273!5m2!1sel!2sgr"
@@ -215,6 +268,17 @@ function Home() {
         </MDBCol>
       </MDBRow>
       <BackToTopButton />
+      <Popup trigger={timedPopup} setTrigger={setTimedPopup}>
+        <lottie-player
+          src="https://assets4.lottiefiles.com/packages/lf20_jocxlpyp.json"
+          background="transparent"
+          speed="1"
+          style={{ width: " 100px", height: "100px" }}
+          loop
+          autoplay
+        ></lottie-player>
+        <p>We use cookies for improving user experience</p>
+      </Popup>
     </div>
   );
 }

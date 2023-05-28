@@ -2,10 +2,26 @@ body {
   background: #c8efed;
 }
 
-.img-fluid {
-  border-radius: 30em;
+.demo-wrap {
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
+.demo-content {
+  opacity: 0.6;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  background-image: url("https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80");
+  background-size: cover;
+}
+.text-wrap {
+  padding: 10em 10em 10em 10em;
+}
 .animatedText {
   display: inline-block;
   overflow: hidden;
@@ -31,16 +47,39 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 2em;
+  margin: 5em;
+  border-radius: 10px;
+  transition: background-color 2s ease-out;
+  border: 1px solid #494141;
+}
+.box:hover {
+  background-color: #494141;
+  color: white;
+  cursor: pointer;
+}
+.accordion {
+  width: 400px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 20px;
+  background-color: transparent;
+}
+.accordion-wrap {
+  margin: 5em;
+  padding-bottom: 10em;
   border-radius: 10px;
 }
-
+.heartHands img {
+  border-radius: 10px;
+  opacity: 0.8;
+}
 .testimonials {
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   flex-direction: column;
+  margin-bottom: 5em;
 }
 
 /* bellow the testimonials styling */
@@ -184,6 +223,28 @@ body {
     width: 24% !important;
     border-radius: 50%;
   }
+  .accordion-wrap {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+  .footer-list {
+    display: block;
+    width: 100%;
+    padding-bottom: 2em;
+  }
+  .contactCard {
+    width: 100%;
+  }
+  .socialContainer {
+    width: 100%;
+  }
+  .map h5 {
+    display: none;
+  }
+  .map iframe {
+    display: none;
+  }
 }
 
 @keyframes showup {
@@ -236,9 +297,3 @@ body {
     width: 355px;
   }
 }
-
-/* p {
-  font-size: 12px;
-  color: #999;
-  margin-top: 200px;
-} */

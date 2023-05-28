@@ -68,7 +68,7 @@ button {
   position: relative;
 }
 .cta {
-  color: #03b664;
+  color: #494141;
   font-weight: 500;
   font-size: 15px;
   padding: 5px;
@@ -76,14 +76,14 @@ button {
   border-radius: 50px;
   text-transform: capitalize;
   display: block;
-  border: 1px solid #03b664;
+  border: 1px solid #494141;
   display: inline-block;
   overflow: hidden;
   position: relative;
   transition: color 0.4s linear;
 }
 .cta:hover {
-  background-color: #03b664;
+  background-color: #494141;
   color: #fff;
 }
 
