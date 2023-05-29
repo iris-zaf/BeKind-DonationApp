@@ -39,6 +39,7 @@ function Login(props) {
       // console.log(response);
       if (response.status === 200) {
         localStorage.setItem("token", response.data);
+
         alert("Logged in Successfully");
         return true;
       }

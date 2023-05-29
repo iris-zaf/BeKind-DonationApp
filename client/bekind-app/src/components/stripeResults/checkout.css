@@ -48,3 +48,12 @@
   opacity: 1;
   cursor: none;
 }
+@media only screen and (max-width: 934px) {
+  #payment-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    align-items: center;
+  }
+}

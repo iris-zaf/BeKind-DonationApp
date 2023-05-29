@@ -56,6 +56,7 @@ body {
   background-color: #494141;
   color: white;
   cursor: pointer;
+  border: none;
 }
 .accordion {
   width: 400px;
