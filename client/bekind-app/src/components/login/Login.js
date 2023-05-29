@@ -35,7 +35,7 @@ function Login(props) {
 
   const PostLogin = async (data) => {
     try {
-      const response = await axios.post("http://localhost:8080/login", data);
+      const response = await axios.post(`${process.env.REACT_APP_API_SERVER_ADDRESS}/login`, data);
       // console.log(response);
       if (response.status === 200) {
         localStorage.setItem("token", response.data);
