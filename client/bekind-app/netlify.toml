@@ -1,0 +1,5 @@
+#whatever url is request serve index.html
+[[redirects]]
+from = "/*"
+to = "/index.html"
+status = 200
