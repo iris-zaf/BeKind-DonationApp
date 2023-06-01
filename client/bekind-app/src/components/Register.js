@@ -36,7 +36,7 @@ function Register() {
   const PostRegister = async (data) => {
     try {
       await axios.post(
-        `${process.env.REACT_APP_API_SERVER_ADDRESS}` / register,
+        `${process.env.REACT_APP_API_SERVER_ADDRESS}/register`,
         data
       );
       alert("Registered  Successfully");
