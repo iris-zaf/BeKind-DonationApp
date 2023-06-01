@@ -246,6 +246,12 @@ body {
   .map iframe {
     display: none;
   }
+  .accordion {
+    width: 350px;
+  }
+  .accordion-wrap {
+    margin: 26px;
+  }
 }
 
 @keyframes showup {
