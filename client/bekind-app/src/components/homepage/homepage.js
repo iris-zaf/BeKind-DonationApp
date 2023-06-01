@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 import {
   MDBInput,
@@ -11,10 +12,11 @@ import {
   MDBIcon,
   MDBContainer,
   MDBAccordion,
+  MDBCheckbox,
   MDBAccordionItem,
 } from "mdb-react-ui-kit";
 import "../homepage/HomePage.css";
-import Popup from "../popup/Popup";
+import "../popup/Popup.css";
 import axios from "axios";
 import Testimonials from "../homepage/Testimonials";
 import BackToTopButton from "../homepage/BackToTop";
@@ -22,10 +24,10 @@ import BackToTopButton from "../homepage/BackToTop";
 import instagram from "../homepage/icons8-instagram-100.png";
 import facebook from "../homepage/icons8-facebook-50.png";
 import twitter from "../homepage/icons8-twitter-50.png";
-function Home() {
+function Home(props) {
   const [recipient_email, setEmail] = useState("");
+  const [displayPopUp, setDisplayPopUp] = useState(true);
 
-  const [timedPopup, setTimedPopup] = useState(false);
   function sendMail() {
     if (recipient_email) {
       axios
@@ -39,12 +41,18 @@ function Home() {
     return alert("Fill in all the fields to continue");
   }
 
-  useEffect(() => {
-    setTimeout(() => {
-      setTimedPopup(true);
-    }, 2000);
-  }, []);
+  const closePopUp = () => {
+    localStorage.setItem("seenPopUp", true);
+    //setting state to false to not display pop-up
+    setDisplayPopUp(false);
+  };
 
+  //useEffect to trigger on first render and check if in the localStorage
+  useEffect(() => {
+    let returningUser = localStorage.getItem("seenPopUp");
+
+    setDisplayPopUp(!returningUser);
+  }, []);
   return (
     <div className="smallCardsCont">
       <MDBContainer fluid className="p-0">
@@ -214,10 +222,28 @@ function Home() {
       <MDBRow className=" p-5 section-footer mt-5">
         <MDBCol className="footer-list col-3">
           <ul>
-            <li>HOME</li>
-            <li>SEARCH FOR A DONATION</li>
-            <li>MY DONATIONS</li>
-            <li>ABOUT</li>
+            <li>
+              {" "}
+              <Link to="/" className="text-dark list">
+                HOME
+              </Link>
+            </li>
+            <li>
+              {" "}
+              <Link to="/search" className="text-dark list">
+                SEARCH FOR A DONATION
+              </Link>
+            </li>
+            <li>
+              <Link to="/history" className="text-dark list">
+                MY DONATIONS
+              </Link>
+            </li>
+            <li>
+              <Link to="/history" className="text-dark list">
+                ABOUT
+              </Link>
+            </li>
           </ul>
         </MDBCol>
         <MDBCol>
@@ -268,17 +294,44 @@ function Home() {
         </MDBCol>
       </MDBRow>
       <BackToTopButton />
-      <Popup trigger={timedPopup} setTrigger={setTimedPopup}>
-        <lottie-player
-          src="https://assets4.lottiefiles.com/packages/lf20_jocxlpyp.json"
-          background="transparent"
-          speed="1"
-          style={{ width: " 100px", height: "100px" }}
-          loop
-          autoplay
-        ></lottie-player>
-        <p>We use cookies for improving user experience</p>
-      </Popup>
+      <div>
+        {/* conditional rendering, if displayPopUp is truthy we will show the modal */}
+        {displayPopUp && (
+          <div
+            open={true}
+            // once pop-up will close "closePopUp" function will be executed
+            onClose={closePopUp}
+            // aria-labelledby="modal-modal-title"
+            // aria-describedby="modal-modal-description"
+          >
+            {/* in the line below we pass our custom styles object to the modal via 'sx' prop*/}
+            <div className="popup">
+              <div className="popup-inner">
+                {" "}
+                <h2>Terms of use</h2>
+                <lottie-player
+                  src="https://assets4.lottiefiles.com/packages/lf20_ZygRYHjKiC.json"
+                  background="transparent"
+                  speed="1"
+                  style={{ width: " 100px", height: "100px" }}
+                  loop
+                  autoplay
+                ></lottie-player>
+                {props.children}
+                <MDBCheckbox
+                  name="flexCheck"
+                  id="flexCheckDefault"
+                  label="I agree with all the statements in"
+                />
+                <a href="#">Terms of use</a>
+                <button className="x" onClick={closePopUp}>
+                  ❌
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
     </div>
   );
 }

@@ -25,7 +25,7 @@ function Error() {
         <br></br>
         <br />{" "}
         <div>
-          Go back to <Link to="/homepage">safety</Link> ⬅️
+          Go back to <Link to="/">safety</Link> ⬅️
         </div>
       </div>
     </>

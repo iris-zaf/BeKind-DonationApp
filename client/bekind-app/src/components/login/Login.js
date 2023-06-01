@@ -12,6 +12,7 @@ import {
 } from "mdb-react-ui-kit";
 import "../donationSearch/donationSearch.css";
 import "../login/login.css";
+let token = localStorage.getItem("token");
 function Login(props) {
   const navigate = useNavigate();
   const {
@@ -35,8 +36,16 @@ function Login(props) {
 
   const PostLogin = async (data) => {
     try {
-      const response = await axios.post(`${process.env.REACT_APP_API_SERVER_ADDRESS}/login`, data);
-      // console.log(response);
+      const response = await axios.post(
+        `${process.env.REACT_APP_API_SERVER_ADDRESS}/login`,
+        data,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+
       if (response.status === 200) {
         localStorage.setItem("token", response.data);
 

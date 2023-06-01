@@ -99,14 +99,8 @@ function DonationSearch({ amount, setAmount }) {
                     search();
                   }
                 }}
-                // onChange={(event) => setSearchInput(event.target.value)}
               />{" "}
             </MDBCol>
-            {/* <MDBCol className="d-inline-flex px-2">
-              <button onClick={search} className="button-1" md="4" color="dark">
-                <MDBIcon fas icon="search" />
-              </button>
-            </MDBCol> */}
           </MDBCol>
         </MDBRow>
       </MDBContainer>

@@ -13,9 +13,12 @@ import History from "./components/history/History";
 import Payment from "./components/stripeResults/Payment";
 
 function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  let token = localStorage.getItem("token");
+  //double exclamation means that the value is boolean
+  const [isLoggedIn, setIsLoggedIn] = useState(!!token);
   const [loading, setLoading] = useState(false);
   const [amount, setAmount] = useState(0);
+
   const handleUserState = (state) => {
     setIsLoggedIn(state);
   };
@@ -25,6 +28,7 @@ function App() {
       setLoading(false);
     }, 2500);
   }, []);
+
   return (
     <div>
       {loading ? (
@@ -58,15 +62,29 @@ function App() {
             />
             <Route path="/register" element={<Register />} />
             <Route path="/success" element={<Success />} />
-            <Route path="/error" element={<Error />} />
+            <Route
+              path="/error"
+              element={isLoggedIn ? <Error /> : "Please log in"}
+            />
             <Route
               path="/search"
-              element={<DonationSearch amount={amount} setAmount={setAmount} />}
+              element={
+                isLoggedIn ? (
+                  <DonationSearch amount={amount} setAmount={setAmount} />
+                ) : (
+                  "Please log in"
+                )
+              }
             />
-            <Route path="/history" element={<History />} />
+            <Route
+              path="/history"
+              element={isLoggedIn ? <History /> : "Please log in"}
+            />
             <Route
               path="/create-payment-intent"
-              element={<Payment amount={amount} />}
+              element={
+                isLoggedIn ? <Payment amount={amount} /> : "Please log in"
+              }
             />
             <Route
               path="/logout"

@@ -4,11 +4,12 @@ import {
   useElements,
   PaymentElement,
 } from "@stripe/react-stripe-js";
-
+import { useNavigate } from "react-router-dom";
 import "./checkout.css";
 // import Cards from "react-credit-cards";
 import { MDBRow, MDBCol } from "mdb-react-ui-kit";
 function CheckoutForm(props) {
+  const navigate = useNavigate();
   const stripe = useStripe();
   const elements = useElements();
 
@@ -31,7 +32,8 @@ function CheckoutForm(props) {
     });
 
     if (error.type === "card_error" || error.type === "validation_error") {
-      setMessage(error.message);
+      //setMessage(error.message);
+      return navigate("/error");
     } else {
       setMessage("An unexpected error occured.");
     }
