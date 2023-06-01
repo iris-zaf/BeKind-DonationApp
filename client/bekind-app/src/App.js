@@ -73,7 +73,7 @@ function App() {
                 isLoggedIn ? (
                   <DonationSearch amount={amount} setAmount={setAmount} />
                 ) : (
-                  "Please log in"
+                  <Unauth />
                 )
               }
             />
@@ -83,9 +83,7 @@ function App() {
             />
             <Route
               path="/create-payment-intent"
-              element={
-                isLoggedIn ? <Payment amount={amount} /> : "Please log in"
-              }
+              element={isLoggedIn ? <Payment amount={amount} /> : <Unauth />}
             />
             <Route
               path="/logout"
