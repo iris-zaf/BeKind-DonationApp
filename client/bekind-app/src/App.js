@@ -12,6 +12,7 @@ import Home from "./components/homepage/homepage";
 import History from "./components/history/History";
 import Payment from "./components/stripeResults/Payment";
 import ErrorPage from "./components/404/404";
+import Unauth from "./components/Unauth/unauth";
 function App() {
   let token = localStorage.getItem("token");
   //double exclamation means that the value is boolean
@@ -64,7 +65,7 @@ function App() {
             <Route path="/success" element={<Success />} />
             <Route
               path="/error"
-              element={isLoggedIn ? <Error /> : "Please log in"}
+              element={isLoggedIn ? <Error /> : <Unauth />}
             />
             <Route
               path="/search"
@@ -78,7 +79,7 @@ function App() {
             />
             <Route
               path="/history"
-              element={isLoggedIn ? <History /> : "Please log in"}
+              element={isLoggedIn ? <History /> : <Unauth />}
             />
             <Route
               path="/create-payment-intent"
