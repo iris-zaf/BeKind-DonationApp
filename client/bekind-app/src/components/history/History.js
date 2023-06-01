@@ -12,7 +12,7 @@ import {
 } from "mdb-react-ui-kit";
 import "../history/history.css";
 import { useState, useEffect } from "react";
-
+import hexagon from "./hexagon-geometrical-shape-outline.png";
 function History() {
   const [history, setHistory] = useState([]);
   let myToken = localStorage.getItem("token");
@@ -38,14 +38,17 @@ function History() {
     <>
       <div style={{ display: "flex" }}>
         {" "}
-        <lottie-player
-          src="https://assets8.lottiefiles.com/packages/lf20_udTJtk.json"
-          background="transparent"
-          speed="1"
-          style={{ width: " 7em", height: "7em" }}
-          loop
-          autoplay
-        ></lottie-player>
+        <img
+          src={hexagon}
+          alt="hexagon"
+          style={{
+            width: "2em",
+            height: "2em",
+
+            marginTop: "2em",
+            marginLeft: "2em",
+          }}
+        />
         <h4 className="myDonation">My Donations </h4>
       </div>
 

@@ -71,7 +71,7 @@ const Navbar = ({ userState }) => {
             <MDBNavbarBrand className="m-2 fs-1 ">
               <Link to="/" className="text-dark">
                 <img src={bee} alt="bee" style={{ width: "1em" }} />
-                BeKind
+                Kind
               </Link>
             </MDBNavbarBrand>
             <MDBNavbarToggler

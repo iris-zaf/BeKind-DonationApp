@@ -11,7 +11,7 @@ import DonationSearch from "./components/donationSearch/donationSearch";
 import Home from "./components/homepage/homepage";
 import History from "./components/history/History";
 import Payment from "./components/stripeResults/Payment";
-
+import ErrorPage from "./components/404/404";
 function App() {
   let token = localStorage.getItem("token");
   //double exclamation means that the value is boolean
@@ -90,6 +90,7 @@ function App() {
               path="/logout"
               element={<Logout onLogout={handleUserState} />}
             />
+            <Route path="*" element={<ErrorPage />} />
           </Routes>
         </>
       )}

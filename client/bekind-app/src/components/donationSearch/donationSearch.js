@@ -51,7 +51,7 @@ function DonationSearch({ amount, setAmount }) {
         }
       );
       console.log("response", response);
-      alert("Donation saved");
+
       navigate("/create-payment-intent");
 
       return true;
