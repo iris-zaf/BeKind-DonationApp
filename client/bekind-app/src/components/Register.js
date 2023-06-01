@@ -35,7 +35,10 @@ function Register() {
 
   const PostRegister = async (data) => {
     try {
-      await axios.post("http://localhost:8080/register", data);
+      await axios.post(
+        `${process.env.REACT_APP_API_SERVER_ADDRESS}` / register,
+        data
+      );
       alert("Registered  Successfully");
       return true;
     } catch (error) {
