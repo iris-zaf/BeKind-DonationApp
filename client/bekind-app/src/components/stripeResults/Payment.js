@@ -9,17 +9,19 @@ function Payment(props) {
 
   console.log("props", props);
   useEffect(() => {
-    fetch("http://localhost:8080/config").then(async (r) => {
-      const { publishableKey } = await r.json();
-      //   console.log(publishableKey);
-      setStripePromise(publishableKey);
-    });
+    fetch(`${process.env.REACT_APP_API_SERVER_ADDRESS}/config`).then(
+      async (r) => {
+        const { publishableKey } = await r.json();
+        //   console.log(publishableKey);
+        setStripePromise(publishableKey);
+      }
+    );
   }, []);
 
   //second useEffect to create the payment intent
 
   useEffect(() => {
-    fetch("http://localhost:8080/create-payment-intent", {
+    fetch(`${process.env.REACT_APP_API_SERVER_ADDRESS}/create-payment-intent`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ amount: props.amount * 100 }),

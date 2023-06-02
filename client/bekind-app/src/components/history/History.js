@@ -54,7 +54,7 @@ function History() {
 
       <MDBContainer fluid className="my-5 d-flex">
         {" "}
-        <MDBRow className="row-cols-1 row-cols-md-6">
+        <MDBRow className="row-cols-1 row-cols-md-4">
           {history.map((donation) => {
             return (
               <MDBCard

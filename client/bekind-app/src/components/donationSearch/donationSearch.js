@@ -41,7 +41,7 @@ function DonationSearch({ amount, setAmount }) {
   async function saveDonation(charity) {
     try {
       let response = await axios.post(
-        "http://localhost:8080/donation",
+        `        ${process.env.REACT_APP_API_SERVER_ADDRESS}/donation`,
         { charity, amount },
 
         {
