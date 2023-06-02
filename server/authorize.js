@@ -1,7 +1,7 @@
 const jwt = require("jsonwebtoken");
 require("dotenv").config();
 const PRIVATE_KEY = process.env.PRIVATE_KEY;
-
+console.log("PRIVATE_KEY", PRIVATE_KEY);
 const verifyToken = async (req, res, next) => {
   console.log("req.headers", req.headers);
   try {

@@ -18,6 +18,7 @@ import {
 } from "mdb-react-ui-kit";
 import "../donationSearch/donationSearch.css";
 import { useState } from "react";
+import BackToTopButton from "../homepage/BackToTop";
 
 function DonationSearch({ amount, setAmount }) {
   const [searchInput, setSearchInput] = useState("");
@@ -157,6 +158,7 @@ function DonationSearch({ amount, setAmount }) {
           })}
         </MDBRow>
       </MDBContainer>
+      <BackToTopButton />
     </div>
   );
 }

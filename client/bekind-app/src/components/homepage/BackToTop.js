@@ -16,7 +16,7 @@ function BackToTopButton() {
 
   const scrollUp = () => {
     window.scrollTo({
-      top: 100,
+      top: 10,
       behavior: "smooth",
     });
   };
@@ -32,10 +32,10 @@ function BackToTopButton() {
             height: "50px",
             width: "50px",
 
-            fontSize: "10px",
+            fontSize: "12px",
             borderRadius: "50px",
 
-            background: " grey",
+            background: "rgb(20, 33, 61)",
             border: " none",
           }}
           onClick={scrollUp}
