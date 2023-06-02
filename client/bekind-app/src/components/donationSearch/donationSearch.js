@@ -115,6 +115,7 @@ function DonationSearch({ amount, setAmount }) {
                     alt="..."
                     src={charity.coverImageUrl}
                     className="cardImg"
+                    style={{ height: "150px" }}
                   />
                 </div>
                 <MDBCardBody>

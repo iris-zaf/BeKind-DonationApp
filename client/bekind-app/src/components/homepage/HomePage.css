@@ -50,10 +50,10 @@ body {
   margin: 5em;
   border-radius: 10px;
   transition: background-color 2s ease-out;
-  border: 1px solid #494141;
+  border: 1px solid rgb(20, 33, 61);
 }
 .box:hover {
-  background-color: #494141;
+  background-color: rgb(20, 33, 61);
   color: white;
   cursor: pointer;
   border: none;
@@ -69,6 +69,9 @@ body {
   margin: 5em;
   padding-bottom: 10em;
   border-radius: 10px;
+}
+.heartHands {
+  margin: 1em;
 }
 .heartHands img {
   border-radius: 10px;
@@ -167,7 +170,7 @@ body {
 
 .carousel .control-dots .dot {
   box-shadow: none !important;
-  background: #454545 !important;
+  background: rgb(20, 33, 61) !important;
   outline: 0;
 }
 

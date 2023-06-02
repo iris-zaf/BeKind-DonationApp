@@ -21,7 +21,11 @@ const Navbar = ({ userState }) => {
           <MDBContainer fluid>
             <MDBNavbarBrand className="m-2 fs-1">
               <Link to="/" className="text-dark">
-                <img src={bee} alt="bee" style={{ width: "1em" }} />
+                <img
+                  src={bee}
+                  alt="bee"
+                  style={{ width: "1em", height: "1em" }}
+                />
                 Kind
               </Link>
             </MDBNavbarBrand>
@@ -70,7 +74,11 @@ const Navbar = ({ userState }) => {
           <MDBContainer fluid>
             <MDBNavbarBrand className="m-2 fs-1 ">
               <Link to="/" className="text-dark">
-                <img src={bee} alt="bee" style={{ width: "1em" }} />
+                <img
+                  src={bee}
+                  alt="bee"
+                  style={{ width: "1em", height: "1em" }}
+                />
                 Kind
               </Link>
             </MDBNavbarBrand>

@@ -1,15 +1,21 @@
 .imageContainer {
-  width: 100%;
-  margin: 0 auto;
+  width: auto;
+
+  margin: 0px;
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
+  object-fit: contain;
 }
 img {
-  width: 100%;
-  object-fit: contain;
+  width: auto;
+
+  object-fit: cover;
+}
+.cardContainer {
+  padding: 0;
 }
 .title-name {
   text-align: center;
@@ -21,4 +27,8 @@ img {
   margin-top: 2em;
 
   font-weight: 600;
+}
+.accordion-button {
+  background-color: rgb(20, 33, 61);
+  color: white;
 }

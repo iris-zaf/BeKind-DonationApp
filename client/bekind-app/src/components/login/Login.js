@@ -108,7 +108,7 @@ function Login(props) {
                 <p className="errorMsg">{errors.password.message}</p>
               )}
               <div className="text-center mb-5 pb-1">
-                <button type="submit" className="cta bg-">
+                <button type="submit" className="cta ">
                   Sign in
                 </button>
                 <h5 className="small  mb-5 ">

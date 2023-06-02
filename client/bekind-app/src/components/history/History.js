@@ -54,20 +54,22 @@ function History() {
 
       <MDBContainer fluid className="my-5 d-flex">
         {" "}
-        <MDBRow className="w-100 row-cols-1 row-cols-md-5">
+        <MDBRow className="row-cols-1 row-cols-md-6">
           {history.map((donation) => {
             return (
               <MDBCard
                 key={donation.id}
                 style={{
-                  margin: "2em",
+                  marginBottom: "1em",
                 }}
+                className="cardContainer"
               >
                 <div className="imageContainer">
                   <MDBCardImage
                     className="cardImg"
                     position="top"
                     alt="card-image"
+                    style={{ height: "150px" }}
                     src={donation.coverImageUrl}
                   />
                 </div>
