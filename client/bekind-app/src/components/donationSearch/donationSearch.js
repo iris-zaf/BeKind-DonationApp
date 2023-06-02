@@ -3,7 +3,6 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import AsyncSelect from "react-select/async";
 import {
-  MDBInput,
   MDBCol,
   MDBContainer,
   MDBRow,
@@ -11,10 +10,8 @@ import {
   MDBCardImage,
   MDBCardTitle,
   MDBCard,
-  MDBIcon,
   MDBCardText,
   MDBInputGroup,
-  MDBBtn,
 } from "mdb-react-ui-kit";
 import "../donationSearch/donationSearch.css";
 import { useState } from "react";
