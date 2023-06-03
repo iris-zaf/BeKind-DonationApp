@@ -31,7 +31,7 @@ function Home(props) {
   function sendMail() {
     if (recipient_email) {
       axios
-        .post("http://localhost:8080/send_email", {
+        .post(`${process.env.REACT_APP_API_SERVER_ADDRESS}/send_email`, {
           recipient_email,
         })
         .then(() => alert("Message send successfully"))

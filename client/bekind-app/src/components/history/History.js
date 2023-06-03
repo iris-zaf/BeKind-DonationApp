@@ -18,11 +18,14 @@ function History() {
   let myToken = localStorage.getItem("token");
   const navigate = useNavigate();
   async function getHistory() {
-    let response = await axios.get("http://localhost:8080/history", {
-      headers: {
-        Authorization: `Bearer ${myToken}`,
-      },
-    });
+    let response = await axios.get(
+      `${process.env.REACT_APP_API_SERVER_ADDRESS}/history`,
+      {
+        headers: {
+          Authorization: `Bearer ${myToken}`,
+        },
+      }
+    );
     console.log(response);
     if (response.data.length === 0) {
       alert("No donations made");
