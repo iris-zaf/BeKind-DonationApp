@@ -50,9 +50,7 @@ function DonationSearch({ amount, setAmount }) {
       );
       console.log("response", response);
 
-      navigate(
-        `${process.env.REACT_APP_API_SERVER_ADDRESS}/create-payment-intent`
-      );
+      navigate("/create-payment-intent");
 
       return true;
     } catch (error) {
