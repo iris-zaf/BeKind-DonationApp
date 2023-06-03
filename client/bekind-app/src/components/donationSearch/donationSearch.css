@@ -76,10 +76,26 @@ button {
 .cardImg img {
   object-fit: cover;
 }
-
+.btnDemo {
+  margin: 0.6em;
+  padding: 0.6em;
+  color: black;
+  background-color: #fff;
+  box-shadow: none;
+}
+.btnDemo:hover {
+  background-color: #fff;
+  color: black;
+  cursor: default;
+  box-shadow: none;
+}
 @media only screen and (max-width: 850px) {
   .cardContainer {
     margin: 0;
     margin-bottom: 1em;
+  }
+  .row {
+    margin-left: 0;
+    margin-right: 0;
   }
 }

@@ -12,9 +12,11 @@ import {
   MDBCard,
   MDBCardText,
   MDBInputGroup,
+  MDBBtn,
 } from "mdb-react-ui-kit";
 import "../donationSearch/donationSearch.css";
 import { useState } from "react";
+
 import BackToTopButton from "../homepage/BackToTop";
 
 function DonationSearch({ amount, setAmount }) {
@@ -59,7 +61,6 @@ function DonationSearch({ amount, setAmount }) {
     }
   }
 
-  console.log("charities", charities);
   return (
     <div>
       <MDBContainer
@@ -75,7 +76,7 @@ function DonationSearch({ amount, setAmount }) {
                 styles={{
                   control: (baseStyles, state) => ({
                     ...baseStyles,
-                    width: "30vw",
+                    width: "40vw",
                   }),
                 }}
                 ariaLiveMessages={{ onFocus: "" }}
@@ -89,7 +90,7 @@ function DonationSearch({ amount, setAmount }) {
                 defaultOptions
                 onInputChange={(e) => setSearchInput(e)}
                 onChange={(data) => setCharities(data.nonprofits)}
-                placeholder="search..."
+                placeholder="search by type..."
                 type="text"
                 id="typeText"
                 onKeyPress={(event) => {
@@ -98,6 +99,12 @@ function DonationSearch({ amount, setAmount }) {
                   }
                 }}
               />{" "}
+            </MDBCol>
+            <MDBCol>
+              <MDBBtn className="btnDemo">environment</MDBBtn>
+              <MDBBtn className="btnDemo">animals</MDBBtn>
+              <MDBBtn className="btnDemo">children</MDBBtn>
+              <MDBBtn className="btnDemo">......</MDBBtn>
             </MDBCol>
           </MDBCol>
         </MDBRow>

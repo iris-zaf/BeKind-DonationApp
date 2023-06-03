@@ -226,23 +226,23 @@ function Home(props) {
             <li>
               {" "}
               <Link to="/" className="text-dark list">
-                HOME
+                Home
               </Link>
             </li>
             <li>
               {" "}
               <Link to="/search" className="text-dark list">
-                SEARCH FOR A DONATION
+                Search for a donation
               </Link>
             </li>
             <li>
               <Link to="/history" className="text-dark list">
-                MY DONATIONS
+                My donation
               </Link>
             </li>
             <li>
               <Link to="/history" className="text-dark list">
-                ABOUT
+                About
               </Link>
             </li>
           </ul>
