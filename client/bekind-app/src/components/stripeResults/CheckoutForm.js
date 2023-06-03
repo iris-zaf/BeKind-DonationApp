@@ -48,7 +48,7 @@ function CheckoutForm(props) {
             src="https://assets6.lottiefiles.com/private_files/lf30_4b8xfsqj.json"
             background="transparent"
             speed="1"
-            style={{ width: "400px", height: "400px" }}
+            style={{ width: "378px", height: "300px" }}
             loop
             autoplay
           ></lottie-player>
