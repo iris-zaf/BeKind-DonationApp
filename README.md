@@ -34,9 +34,10 @@ Builds the app for production to the `build` folder. It correctly bundles React 
 - HTML
 - CSS
   
-##APIs used
+##APIs
+
   -Every.org Charity API
-  - Stripe API for testing the payment
+  - Stripe API for payment
 
 
 ## Author
