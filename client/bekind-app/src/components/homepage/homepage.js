@@ -11,7 +11,6 @@ import {
   MDBCardText,
   MDBRow,
   MDBCol,
-  MDBIcon,
   MDBContainer,
   MDBAccordion,
   MDBCheckbox,
@@ -23,8 +22,8 @@ import axios from "axios";
 import Testimonials from "../homepage/Testimonials";
 import BackToTopButton from "../homepage/BackToTop";
 
-import instagram from "../homepage/icons8-instagram-100.png";
-import facebook from "../homepage/icons8-facebook-50.png";
+import instagram from "../homepage/instagram.png";
+import facebook from "../homepage/facebook.png";
 import twitter from "../homepage/icons8-twitter-50.png";
 function Home(props) {
   const [recipient_email, setEmail] = useState("");

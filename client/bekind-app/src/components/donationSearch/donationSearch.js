@@ -16,7 +16,7 @@ import {
 } from "mdb-react-ui-kit";
 import "../donationSearch/donationSearch.css";
 import { useState } from "react";
-
+import { motion } from "framer-motion";
 import BackToTopButton from "../homepage/BackToTop";
 
 function DonationSearch({ amount, setAmount }) {
@@ -103,7 +103,14 @@ function DonationSearch({ amount, setAmount }) {
       >
         <MDBRow className="d-flex ">
           <MDBCol>
-            <h3 className="fw-bold mb-0">Search for a charity or cause</h3>
+            <motion.h3
+              initial={{ opacity: 0, scale: 0 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6 }}
+              className="fw-bold mb-0"
+            >
+              Search for a charity or cause
+            </motion.h3>
             <p>Find and align with a charity that supports your passions</p>
             <MDBCol className="d-inline-flex">
               <AsyncSelect
