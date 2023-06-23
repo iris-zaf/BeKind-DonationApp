@@ -22,4 +22,7 @@
   .login-card {
     width: 330px;
   }
+  .login-card {
+    margin: 0px;
+  }
 }

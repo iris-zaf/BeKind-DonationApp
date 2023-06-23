@@ -11,7 +11,7 @@ import {
   MDBCheckbox,
 } from "mdb-react-ui-kit";
 import "../components/donationSearch/donationSearch.css";
-function Register() {
+function Register(props) {
   const navigate = useNavigate();
   const {
     register,
@@ -29,6 +29,7 @@ function Register() {
 
     const res = await PostRegister(userData);
     if (res) {
+      props.onRegister(true);
       navigate("/");
     }
   };

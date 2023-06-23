@@ -61,7 +61,10 @@ function App() {
               path="/login"
               element={<Login onLogin={handleUserState} />}
             />
-            <Route path="/register" element={<Register />} />
+            <Route
+              path="/register"
+              element={<Register onRegister={handleUserState} />}
+            />
             <Route path="/success" element={<Success />} />
             <Route
               path="/error"

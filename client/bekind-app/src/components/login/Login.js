@@ -49,11 +49,10 @@ function Login(props) {
       if (response.status === 200) {
         localStorage.setItem("token", response.data);
 
-        alert("Logged in Successfully");
         return true;
       }
     } catch (error) {
-      alert("Unable to Login...");
+      // alert("Unable to Login...");
       console.log(error);
     }
   };
@@ -61,7 +60,7 @@ function Login(props) {
     <form onSubmit={handleSubmit(onSubmit)}>
       <MDBContainer className="my-2 gradient-form " fluid>
         <MDBRow>
-          <MDBCol sm="6">
+          <MDBCol sm="6" style={{ paddingLeft: "0px" }}>
             <div className=" flex-column col-4  login-card">
               <div className="text-center">
                 <MDBIcon
@@ -108,7 +107,11 @@ function Login(props) {
                 <p className="errorMsg">{errors.password.message}</p>
               )}
               <div className="text-center mb-5 pb-1">
-                <button type="submit" className="cta ">
+                <button
+                  type="submit"
+                  className="btnDonate "
+                  style={{ color: "white" }}
+                >
                   Sign in
                 </button>
                 <h5 className="small  mb-5 ">

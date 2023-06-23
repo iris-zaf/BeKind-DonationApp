@@ -38,6 +38,40 @@ function DonationSearch({ amount, setAmount }) {
         setCharities(data.nonprofits);
       });
   }
+
+  async function searchEnvironment() {
+    fetch(
+      "https://partners.every.org/v0.2/browse/environment?apiKey=pk_live_458f42cf9a2a06e8cf56ee7a337aab41"
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        setCharities(data.nonprofits);
+      });
+  }
+
+  async function searchAnimals() {
+    fetch(
+      "https://partners.every.org/v0.2/browse/animals?apiKey=pk_live_458f42cf9a2a06e8cf56ee7a337aab41"
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        setCharities(data.nonprofits);
+      });
+  }
+
+  async function searchHousing() {
+    fetch(
+      "https://partners.every.org/v0.2/browse/housing?apiKey=pk_live_458f42cf9a2a06e8cf56ee7a337aab41"
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        setCharities(data.nonprofits);
+      });
+  }
+
   async function saveDonation(charity) {
     try {
       let response = await axios.post(
@@ -101,9 +135,15 @@ function DonationSearch({ amount, setAmount }) {
               />{" "}
             </MDBCol>
             <MDBCol>
-              <MDBBtn className="btnDemo">environment</MDBBtn>
-              <MDBBtn className="btnDemo">animals</MDBBtn>
-              <MDBBtn className="btnDemo">children</MDBBtn>
+              <MDBBtn className="btnDemo" onClick={searchEnvironment}>
+                environment
+              </MDBBtn>
+              <MDBBtn className="btnDemo" onClick={searchAnimals}>
+                animals
+              </MDBBtn>
+              <MDBBtn className="btnDemo" onClick={searchHousing}>
+                housing
+              </MDBBtn>
               <MDBBtn className="btnDemo">......</MDBBtn>
             </MDBCol>
           </MDBCol>
