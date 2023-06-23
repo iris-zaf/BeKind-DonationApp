@@ -233,7 +233,7 @@ function Home(props) {
         </MDBCol>
       </MDBRow>
       <MDBRow className=" p-5 section-footer mt-5">
-        <MDBCol className="footer-list col-3">
+        <MDBCol className="footer-list col-6">
           <ul>
             <li>
               {" "}
@@ -257,16 +257,25 @@ function Home(props) {
                 About
               </Link>
             </li>
+            <li>
+              <img src={instagram} className="socialIcons" alt="instagram" />
+              <img src={facebook} className="socialIcons" alt="facebook" />
+              <img src={twitter} className="socialIcons" alt="facebook" />
+            </li>
           </ul>
         </MDBCol>
         <MDBCol>
-          <MDBCard className="contactCard justify-content-center align-items-center p-4 ">
+          <MDBCard
+            className=" justify-content-center align-items-center p-4 contactCard "
+            style={{ background: " #898d9d66", backdropFilter: "blur(10px)" }}
+          >
             <MDBCardTitle>Subscribe to our newsletter✉️</MDBCardTitle>
             <MDBInput
+              style={{ background: "white" }}
               type="email"
               id="form4Example2"
               wrapperClass="mb-4 mt-3"
-              label="Email address"
+              label="Email address..."
               onChange={(e) => setEmail(e.target.value)}
             />
             {/* <MDBInput
@@ -291,12 +300,8 @@ function Home(props) {
             </button>
           </MDBCard>
         </MDBCol>
-        <MDBCol className="col-3 socialContainer">
-          <img src={instagram} className="socialIcons" alt="instagram" />
-          <img src={facebook} className="socialIcons" alt="facebook" />
-          <img src={twitter} className="socialIcons" alt="facebook" />
-        </MDBCol>
-        <MDBCol className="map">
+
+        {/* <MDBCol className="map">
           <h5>Find us here ❣️</h5>
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d101408.21722940248!2d-122.15130702796334!3d37.41331444145766!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb7495bec0189%3A0x7c17d44a466baf9b!2zzpzOrM6_z4XOvc-EzrXOvSDOks65zr_PhSwgzprOsc67zrnPhs-Mz4HOvc65zrEsIM6Xzr3Pic68zq3Ovc61z4IgzqDOv867zrnPhM61zq_Otc-C!5e0!3m2!1sel!2sgr!4v1683709326273!5m2!1sel!2sgr"
@@ -304,7 +309,7 @@ function Home(props) {
             loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"
           ></iframe>
-        </MDBCol>
+        </MDBCol> */}
       </MDBRow>
       <BackToTopButton />
       <div>

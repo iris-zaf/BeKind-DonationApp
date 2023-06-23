@@ -45,75 +45,89 @@ function History() {
 
   return (
     <>
-      <div style={{ display: "flex" }}>
+      <div style={{ display: "flex", marginTop: "10em" }}>
         {" "}
-        <img
+        {/* <img
           src={hexagon}
           alt="hexagon"
           style={{
             width: "2em",
             height: "2em",
 
-            marginTop: "2em",
-            marginLeft: "2em",
+            ,
           }}
-        />
-        <h4 className="myDonation">My Donations </h4>
+        /> */}
       </div>
       {isSearching ? (
-        <img
-          src={Spinner}
+        <div
+          class="lds-circle"
           style={{
-            display: isSearching ? "block" : "none",
-            width: "5%",
-            position: "fixed",
-            left: "50%",
-            borderRadius: "65px",
+            display: isSearching ? "flex" : "none",
           }}
-          alt="spinner"
-        />
+        >
+          <div></div>
+        </div>
       ) : (
-        <MDBContainer fluid className="my-5 d-flex">
-          {" "}
-          <MDBRow className="row-cols-1 row-cols-md-4">
-            {history.map((donation) => {
-              return (
-                <MDBCard
-                  key={donation.id}
-                  style={{
-                    marginBottom: "1em",
-                  }}
-                  className="cardContainer"
-                >
-                  <div className="imageContainer">
-                    <MDBCardImage
-                      className="cardImg"
-                      position="top"
-                      alt="card-image"
-                      style={{ height: "150px" }}
-                      src={donation.coverImageUrl}
-                    />
-                  </div>
-                  <MDBCardBody className="p-2">
-                    <p style={{ fontSize: "12px" }}>Donated amount:</p>
-                    <MDBCardText style={{ fontSize: "15px" }}>
-                      {new Intl.NumberFormat(undefined, {
-                        style: "currency",
-                        currency: "EUR",
-                      }).format(donation.amount)}
-                    </MDBCardText>
-                    <MDBCardText className="title-name">
-                      {donation.name}
-                    </MDBCardText>
-                    <MDBCardText style={{ fontSize: "12px" }}>
-                      {donation.location}
-                    </MDBCardText>
-                  </MDBCardBody>
-                </MDBCard>
-              );
-            })}
-          </MDBRow>
-        </MDBContainer>
+        // <img
+        //   src={Spinner}
+        //   style={{
+
+        //     width: "5%",
+        //     position: "fixed",
+        //     left: "50%",
+        //     borderRadius: "65px",
+        //   }}
+        //   alt="spinner"
+        // />
+        <>
+          <h4
+            className="myDonation"
+            style={{ display: "flex", justifyContent: "center" }}
+          >
+            My Donations{" "}
+          </h4>
+          <MDBContainer fluid className="my-5 d-flex">
+            {" "}
+            <MDBRow className="row-cols-1 row-cols-md-4">
+              {history.map((donation) => {
+                return (
+                  <MDBCard
+                    key={donation.id}
+                    style={{
+                      marginBottom: "1em",
+                    }}
+                    className="cardContainer"
+                  >
+                    <div className="imageContainer">
+                      <MDBCardImage
+                        className="cardImg"
+                        position="top"
+                        alt="card-image"
+                        style={{ height: "150px" }}
+                        src={donation.coverImageUrl}
+                      />
+                    </div>
+                    <MDBCardBody className="p-2">
+                      <p style={{ fontSize: "12px" }}>Donated amount:</p>
+                      <MDBCardText style={{ fontSize: "15px" }}>
+                        {new Intl.NumberFormat(undefined, {
+                          style: "currency",
+                          currency: "EUR",
+                        }).format(donation.amount)}
+                      </MDBCardText>
+                      <MDBCardText className="title-name">
+                        {donation.name}
+                      </MDBCardText>
+                      <MDBCardText style={{ fontSize: "12px" }}>
+                        {donation.location}
+                      </MDBCardText>
+                    </MDBCardBody>
+                  </MDBCard>
+                );
+              })}
+            </MDBRow>
+          </MDBContainer>
+        </>
       )}
     </>
   );
