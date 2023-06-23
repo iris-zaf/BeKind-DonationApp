@@ -1,6 +1,6 @@
 #payment-form {
   padding: 2em;
-
+  width: 20em;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -16,7 +16,7 @@
     0 30px 60px -30px rgb(0 0 0 / 30%);
 }
 #payment-element {
-  width: 45vw;
+  width: 35vw;
 }
 #messages {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New";
@@ -57,7 +57,7 @@
     align-items: center;
   }
   #payment-element {
-    width: 89vw;
+    width: 85vw;
   }
   .animation {
     width: 74%;
