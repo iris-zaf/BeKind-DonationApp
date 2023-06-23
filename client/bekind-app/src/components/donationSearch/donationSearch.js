@@ -39,7 +39,7 @@ function DonationSearch({ amount, setAmount }) {
       });
   }
 
-  async function searchEnvironment() {
+  function searchEnvironment() {
     fetch(
       "https://partners.every.org/v0.2/browse/environment?apiKey=pk_live_458f42cf9a2a06e8cf56ee7a337aab41"
     )
@@ -50,7 +50,7 @@ function DonationSearch({ amount, setAmount }) {
       });
   }
 
-  async function searchAnimals() {
+  function searchAnimals() {
     fetch(
       "https://partners.every.org/v0.2/browse/animals?apiKey=pk_live_458f42cf9a2a06e8cf56ee7a337aab41"
     )
@@ -61,7 +61,7 @@ function DonationSearch({ amount, setAmount }) {
       });
   }
 
-  async function searchHousing() {
+  function searchHousing() {
     fetch(
       "https://partners.every.org/v0.2/browse/housing?apiKey=pk_live_458f42cf9a2a06e8cf56ee7a337aab41"
     )
