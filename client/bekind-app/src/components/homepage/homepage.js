@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-
+import SocialHands from "./social-care.gif";
+import Idea from "./idea.gif";
+import Kindness from "./kindness.gif";
 import {
   MDBInput,
   MDBCard,
@@ -79,15 +81,19 @@ function Home(props) {
       </MDBContainer>
       <MDBRow className="section">
         <MDBCol>
+          {" "}
           <MDBCard className="box">
-            <MDBIcon
-              fas
-              icon="hands-holding "
-              className=" mt-4 "
-              size="3x"
-              position="top"
-            ></MDBIcon>
             <MDBCardBody>
+              {" "}
+              <img
+                src={SocialHands}
+                alt="social-care"
+                style={{
+                  width: "4em",
+                  borderRadius: "25px",
+                  marginBottom: "1em",
+                }}
+              />
               <MDBCardTitle>Support 50+ nonprofits</MDBCardTitle>
               <MDBCardText>
                 Choose from over 50 charities that are making a big impact on
@@ -98,14 +104,17 @@ function Home(props) {
         </MDBCol>
         <MDBCol>
           <MDBCard className=" box">
-            <MDBIcon
-              fas
-              icon="fist-raised"
-              className=" mt-4 "
-              size="3x"
-              position="top"
-            ></MDBIcon>
             <MDBCardBody>
+              {" "}
+              <img
+                src={Idea}
+                alt="social-care"
+                style={{
+                  width: "4em",
+                  borderRadius: "25px",
+                  marginBottom: "1em",
+                }}
+              />
               <MDBCardTitle>Be The Change</MDBCardTitle>
               <MDBCardText>
                 Every time you donate you are telling yourself a story about
@@ -117,15 +126,19 @@ function Home(props) {
         </MDBCol>
         <MDBCol>
           <MDBCard className=" box">
-            <MDBIcon
-              fas
-              icon="people-carry "
-              className=" mt-4 "
-              size="3x"
-              position="top"
-            ></MDBIcon>
             <MDBCardBody>
-              <MDBCardTitle>Help Yourself While Helping Others</MDBCardTitle>
+              <img
+                src={Kindness}
+                alt="social-care"
+                style={{
+                  width: "4em",
+                  borderRadius: "25px",
+                  marginBottom: "1em",
+                }}
+              />
+              <MDBCardTitle>
+                Help Yourself <br></br> While Helping Others
+              </MDBCardTitle>
               <MDBCardText>
                 Donating for a good cause keeps you motivated and feeling good🤗
               </MDBCardText>
